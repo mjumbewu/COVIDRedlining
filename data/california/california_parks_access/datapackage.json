@@ -1,0 +1,101 @@
+{
+  "accrual_periodicity": "other",
+  "additional_limitations": "",
+  "citation": "Healthy Communities Data and Indicators Project, CDPH. 2017. Access to Parks. ",
+  "contact_email": "opendata@cdph.ca.gov",
+  "data_collection_tool": "The California Protected Areas Database (updated 2016) was obtained as a shape file from the CALANDS website. The database includes open space lands including parks, as well as open space lands with other uses, including: recreation, forestry, historical/cultural, habitat conservation, water supply, scenic areas, flood control, agricultural/ranching, and general open space. Parks greater than 1 acre with ‘Open Access’ designation were selected for analysis. Half mile buffers were created around parks. Census blocks with centroids inside the parks buffer area were selected. 2010 block-level Census redistricting data (100% count by race/ethnicity) were merged with blocks inside the parks buffer area. This process was conducted for all parks and by park type. Block data were aggregated by census tract, city/town, county, region, and state. The percent of residents’ access to parks were calculated for each geographic level and for race/ethnicity strata. Regions were based on counties of metropolitan transportation organizations (MPO) regions as reported in the 2010 California Regional Progress Report (http://www.dot.ca.gov/hq/tpp/offices/orip/ Collaborative%20Planning/Files/ CARegionalProgress_2-1-2011.pdf). Standard errors, relative standard errors, and 95% upper and lower confidence intervals were calculated.   ",
+  "data_license": "Terms of Use",
+  "de_identification_method": "",
+  "description": "This table contains data on access to parks measured as the percent of population within ½ a mile of a parks, beach, open space or coastline for California, its regions, counties, county subdivisions, cities, towns, and census tracts. More information on the data table and a data dictionary can be found in the Data and Resources section.  As communities become increasingly more urban, parks and the protection of green and open spaces within cities increase in importance. Parks and natural areas buffer pollutants and contribute to the quality of life by providing communities with social and psychological benefits such as leisure, play, sports, and contact with nature. Parks are critical to human health by providing spaces for health and wellness activities. The access to parks table is part of a series of indicators in the Healthy Communities Data and Indicators Project (HCI) of the Office of Health Equity. The goal of HCI is to enhance public health by providing data, a standardized set of statistical measures, and tools that a broad array of sectors can use for planning healthy communities and evaluating the impact of plans, projects, policy, and environmental changes on community health. The creation of healthy social, economic, and physical environments that promote healthy behaviors and healthy outcomes requires coordination and collaboration across multiple sectors, including transportation, housing, education, agriculture and others. Statistical metrics, or indicators, are needed to help local, regional, and state public health and partner agencies assess community environments and plan for healthy communities that optimize public health. More information on HCI can be found here: https://www.cdph.ca.gov/Programs/OHE/CDPH%20Document%20Library/Accessible%202%20CDPH_Healthy_Community_Indicators1pager5-16-12.pdf  \r\nThe format of the access to parks table is based on the standardized data format for all HCI indicators. As a result, this data table contains certain variables used in the HCI project (e.g., indicator ID, and indicator definition). Some of these variables may contain the same value for all observations.   \r\n",
+  "geo_coverage": "California",
+  "geographic_granularity": "census tract",
+  "keywords": [
+    "access to parks",
+    "hci",
+    "healthy community indicator",
+    "physical activity",
+    "social determinants of health"
+  ],
+  "limitations": "Limitations",
+  "name": "park-beach-open-space-or-coastline-access",
+  "program_web_page": "https://www.cdph.ca.gov/Programs/OHE/Pages/Healthy-Communities-Data-and-Indicators-Project-(HCI).aspx ",
+  "related_resources": "",
+  "resources": [
+    {
+      "description": "This table contains data on access to parks measured as the percent of population within ½ a mile of a parks, beach, open space or coastline for California, its regions, counties, county subdivisions, cities, towns, and census tracts. More information on the data table and a data dictionary can be found in the Data and Resources section. ",
+      "format": "PDF",
+      "name": "access-to-parks-narrative-and-examples",
+      "path": "access-to-parks-narrative-and-examples.pdf",
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/ff3083ea-17cb-4fb2-b51e-183444515b67/resource/b1d0b85a-72a0-41e4-9b02-44e4ac4630cb/download/hciaccesstoparksnarrative8-11-17-ada.pdf",
+          "title": "Access to Parks Narrative and Examples"
+        }
+      ],
+      "title": "Access to Parks Narrative and Examples"
+    },
+    {
+      "description": "This table contains data on access to parks measured as the percent of population within ½ a mile of a parks, beach, open space or coastline for California, its regions, counties, county subdivisions, cities, towns, and census tracts. More information on the data table and a data dictionary can be found in the Data and Resources section.  ",
+      "format": "XLSX",
+      "name": "park-beach-open-space-or-coastline-access",
+      "path": "park-beach-open-space-or-coastline-access.xlsx",
+      "schema": {
+        "fields": [
+          {
+            "name": "Basic Steps to Filter Data using Excel",
+            "type": "string"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/ff3083ea-17cb-4fb2-b51e-183444515b67/resource/505264b7-8a69-40f8-91fa-459bb386c46e/download/hci_accesstoparks_469_ca_re_co_cd_pl_ct-7-3-2017-ada.xlsx",
+          "title": "Park, Beach, Open Space, or Coastline Access "
+        }
+      ],
+      "title": "Park, Beach, Open Space, or Coastline Access "
+    },
+    {
+      "description": "Data Dictionary for Access to Parks Data",
+      "format": "XLSX",
+      "name": "access-to-parks-data-dictionary",
+      "path": "access-to-parks-data-dictionary.xlsx",
+      "schema": {
+        "fields": [
+          {
+            "name": "County_FIPS",
+            "type": "number"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "MPO Region",
+            "type": "string"
+          },
+          {
+            "name": "MPO_Region_code",
+            "type": "number"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/ff3083ea-17cb-4fb2-b51e-183444515b67/resource/b810928a-80cd-4b7a-a4cd-e5dda9a34171/download/hciaccesstoparks-data-dictionary.xlsx",
+          "title": "Access to Parks Data Dictionary"
+        }
+      ],
+      "title": "Access to Parks Data Dictionary"
+    }
+  ],
+  "secondary_sources": "Data source: California Protected Areas Database (CPAD 2016a), accessed May, 2017 from CALANDS website at http://www.calands.org/ . 2010 block-level population data by race and ethnicity from the U.S. Census Bureau (provided by California State Data Center at the California Department of Finance) Years available: 2010 Updated: 10-year intervals (Census data) Geographies available: census tracts, cities/towns, counties, regions, and state. ",
+  "sources": [
+    {
+      "name": "CDPH Office of Health Equity, Health Research and Statistics Unit",
+      "web": "https://www.cdph.ca.gov/Programs/OHE/Pages/Healthy-Communities-Data-and-Indicators-Project-(HCI).aspx "
+    }
+  ],
+  "temporal_coverage": "2010",
+  "title": "Park, Beach, Open Space, or Coastline Access"
+}

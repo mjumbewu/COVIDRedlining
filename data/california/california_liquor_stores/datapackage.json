@@ -1,0 +1,237 @@
+{
+  "accrual_periodicity": "other",
+  "additional_limitations": "",
+  "citation": "Healthy Communities Data and Indicators Project, CDPH and UCSF. 2014. Percent Population Within A Quarter Mile Of Alcohol Outlets 2014.",
+  "contact_email": "opendata@cdph.ca.gov",
+  "data_collection_tool": "http://www.cdph.ca.gov/programs/Documents/HCI_Alcohol_Outlets_774_Narrative_and_examples-7-15-14.pdf ",
+  "data_license": "Terms of Use",
+  "de_identification_method": "",
+  "description": "This table contains data on the percentage of the total population living within 1/4 mile of alcohol outlets (off-sale, on-sale, total) for California, its regions, counties, county divisions, cities, towns, and Census tracts. Population data is from the 2010 Decennial Census, while the alcohol outlet location data is from 2014 (April).  Race/ethnicity stratification is included in the table. The table is part of a series of indicators in the [Healthy Communities Data and Indicators Project of the Office of Health Equity](https://www.cdph.ca.gov/Programs/OHE/Pages/Healthy-Communities-Data-and-Indicators-Project-(HCI).aspx).  Some studies have found that proximity to alcohol outlets (living within walking distance) is positively associated with outcomes like excessive alcohol consumption and other alcohol related harms like injuries and violence.  More information on the data table and a data dictionary can be found in the About/Attachments section.",
+  "geo_coverage": "California",
+  "geographic_granularity": "census tract",
+  "keywords": [
+    "alcohol",
+    "alcohol drinking",
+    "alcohol outlets",
+    "alcoholism",
+    "hci",
+    "healthy community indicator",
+    "ohe",
+    "social determinants of health"
+  ],
+  "limitations": "Limitations",
+  "name": "population-percentage-within-a-quarter-mile-of-alcohol-outlets-2014",
+  "program_web_page": "None",
+  "related_resources": "",
+  "resources": [
+    {
+      "description": "This table contains data on the percentage of the total population living within 1/4 mile of alcohol outlets (off-sale, on-sale, total) for California, its regions, counties, county divisions, cities, towns, and Census tracts. Population data is from the 2010 Decennial Census, while the alcohol outlet location data is from 2014 (April).  Race/ethnicity stratification is included in the table. The table is part of a series of indicators in the [Healthy Communities Data and Indicators Project of the Office of Health Equity](https://www.cdph.ca.gov/Programs/OHE/Pages/Healthy-Communities-Data-and-Indicators-Project-(HCI).aspx).  Some studies have found that proximity to alcohol outlets (living within walking distance) is positively associated with outcomes like excessive alcohol consumption and other alcohol related harms like injuries and violence.  More information on the data table and a data dictionary can be found in the About/Attachments section.",
+      "format": "PDF",
+      "name": "alcohol-outlets-narrative-and-examples",
+      "path": "alcohol-outlets-narrative-and-examples.pdf",
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/56436b25-193c-40bf-9ef2-922ad3807c4e/resource/263584b2-5af7-43f5-8d5e-43b4c9669700/download/hcialcoholoutlets774narrativeandexamples-7-15-14-2.pdf",
+          "title": "Alcohol Outlets Narrative and Examples"
+        }
+      ],
+      "title": "Alcohol Outlets Narrative and Examples"
+    },
+    {
+      "description": "This table contains data on the percentage of the total population living within 1/4 mile of alcohol outlets (off-sale, on-sale, total) for California, its regions, counties, county divisions, cities, towns, and Census tracts. Population data is from the 2010 Decennial Census, while the alcohol outlet location data is from 2014 (April).  Race/ethnicity stratification is included in the table. The table is part of a series of indicators in the [Healthy Communities Data and Indicators Project of the Office of Health Equity](https://www.cdph.ca.gov/Programs/OHE/Pages/Healthy-Communities-Data-and-Indicators-Project-(HCI).aspx).  Some studies have found that proximity to alcohol outlets (living within walking distance) is positively associated with outcomes like excessive alcohol consumption and other alcohol related harms like injuries and violence.  More information on the data table and a data dictionary can be found in the About/Attachments section.",
+      "format": "XLSX",
+      "name": "population-percentage-within-a-quarter-mile-of-alcohol-outlets-2014-csv",
+      "path": "population-percentage-within-a-quarter-mile-of-alcohol-outlets-2014-csv.xlsx",
+      "schema": {
+        "fields": [
+          {
+            "description": "Indicator ID\n",
+            "name": "ind_id",
+            "title": "ind_id",
+            "type": "string"
+          },
+          {
+            "description": "Definition of indicator in plain language\n",
+            "name": "ind_definition",
+            "title": "ind_definition",
+            "type": "string"
+          },
+          {
+            "description": "Year that the indicator was reported\n",
+            "name": "reportyear",
+            "title": "reportyear",
+            "type": "string"
+          },
+          {
+            "description": "Numeric code for a race/ethnicity group: 1=American Indian or Alaska Native; 2=Asian; 3=Black or African American; 4=Hispanic or Latino; 5=Native Hawaiian or Other Pacific Islander (NHOPI); 6=White;7= Multiple; 8=Other;9=Total\n",
+            "name": "race_eth_code",
+            "title": "race_eth_code",
+            "type": "string"
+          },
+          {
+            "description": "Name of race/ethnic group: AIAN; Asian; AfricanAm; Latino; NHOPI; White; Multiple; Other; Total\n",
+            "name": "race_eth_name",
+            "title": "race_eth_name",
+            "type": "string"
+          },
+          {
+            "description": "Type of geographic unit: CT; Census Tract; PL;Place (includes cities, towns, and census designated places -CDP-, it does not include unincorporated communities); CD; County Division; CO;County; RE; Region CA;State\n",
+            "name": "geotype",
+            "title": "geotype",
+            "type": "string"
+          },
+          {
+            "description": "Value of geographic unit: FIPS ID; place code, CT code, region id, CD id\n",
+            "name": "geotypevalue",
+            "title": "geotypevalue",
+            "type": "string"
+          },
+          {
+            "description": "Name of geographic unit: place, division, county, region name\n",
+            "name": "geoname",
+            "title": "geoname",
+            "type": "string"
+          },
+          {
+            "description": "Name of county that geotype is in\n",
+            "name": "county_name",
+            "title": "county_name",
+            "type": "string"
+          },
+          {
+            "description": "FIPS code of county that geotype is in: 2-digit census state code (06) plus 3-digit census county code\n",
+            "name": "county_fips",
+            "title": "county_fips",
+            "type": "string"
+          },
+          {
+            "description": "Metropolitan Planning Organizations (MPO) regions as reported in the 2010 California Regional Progress Report (http://www.dot.ca.gov/hq/tpp/offices/orip/Collaborative%20Planning/Files/CARegionalProgress_2-1-2011.pdf).\n",
+            "name": "region_name",
+            "title": "region_name",
+            "type": "string"
+          },
+          {
+            "description": "Metopolitan Planning Organization (MPO)-based region code: 01=Bay Area; 02=Butte; 03=Central/Southeast Sierra; 04=Monterey Bay; 05=North Coast; 06=Northeast Sierra; 07=Northern Sacramento Valley; 08=Sacramento Area; 09=San Diego; 10=San Joaquin Valley; 11=San Luis Obispo; 12=Santa Barbara; 13=Shasta; 14=Southern California\n",
+            "name": "region_code",
+            "title": "region_code",
+            "type": "string"
+          },
+          {
+            "description": "On_sale, Off_sale, Total_licenses\nOn sale (California Alcohol and Beverage Control types 40, 41, 42, 47, and 48), off sale (California Alcohol and Beverage Control types types 20 and 21), or total licenses (only on sale + off sale considered here) in an alcohol outlet. An alcohol outlet is a place where alcohol may be legally sold for the buyer to drink there (on-premises outlets, such as bars or restaurants) or elsewhere (off-premises outlets, such as liquor stores).  California Alcohol and Beverage Control (ABC) classifies alcohol outlets in 38 different categories.  The following categories (that constitute more than 80% of the alcohol outlets) are included for this indicator:\n\nTYPE 20 Off-Sale Beer And Wine                                                               \nTYPE 21 Off-Sale General                                                              \nTYPE 40 On-Sale Beer                                                     \nTYPE 41 On-Sale Beer And Wine - Eating Place                                                    \nTYPE 42 On-Sale Beer And Wine - Public Premises                                                             \nTYPE 47 On-Sale General Eating Place                                                     \nTYPE 48 On-Sale General Public Premises                        ",
+            "name": "license_type",
+            "title": "license_type",
+            "type": "string"
+          },
+          {
+            "description": "Number of people within 1/4 mile of an alcohol outlet\n\nBlank cells indicate no alcohol outlet reported in the geographical area.  Zero (0) indicates no population within 1/4 mile of an alcohol outlet.\n",
+            "name": "numerator",
+            "title": "numerator",
+            "type": "number"
+          },
+          {
+            "description": "Number of people in geographic area\n",
+            "name": "denominator",
+            "title": "denominator",
+            "type": "number"
+          },
+          {
+            "description": "(numerator / denominator) *100\n",
+            "name": "percent",
+            "title": "percent",
+            "type": "number"
+          },
+          {
+            "description": "Lower limit of 95% confidence interval\n",
+            "name": "ll_95ci",
+            "title": "ll_95ci",
+            "type": "number"
+          },
+          {
+            "description": "Upper limit of 95% confidence interval\n",
+            "name": "ul_95ci",
+            "title": "ul_95ci",
+            "type": "number"
+          },
+          {
+            "description": "Standard error\n",
+            "name": "se",
+            "title": "se",
+            "type": "number"
+          },
+          {
+            "description": "Relative standard error \n",
+            "name": "rse",
+            "title": "rse",
+            "type": "number"
+          },
+          {
+            "description": "CA_decile groups: California places into 10 groups (or deciles) each, for total population. Equal values or 'ties' are assigned the mean decile rank. For example, in a database of 100 records where 70 records equal 0, 0 values span from the 1st to 7th deciles (70% of all data records). As a result, all 0 values will be assigned to the 4th decile: the mean between the 1st and 7th deciles.  The deciles are only calculated for geographically resolved areas: places and/or census tracts.\n",
+            "name": "ca_decile",
+            "title": "ca_decile",
+            "type": "number"
+          },
+          {
+            "description": "Rate ratio to California rate\nRatio of local percentage to California percentage. This indicates how many times the local percentage is higher or lower than the state percentage (Reference: http://health.mo.gov/training/epi/RateRatio-b.html). Values higher than 1 indicate local rates are higher than state rates.\n",
+            "name": "ca_rr",
+            "title": "ca_rr",
+            "type": "number"
+          },
+          {
+            "description": "Date/time stamp of version of data \nMM/DD/CCYY hh:mm:ss\n",
+            "name": "version",
+            "title": "version",
+            "type": "datetime"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/56436b25-193c-40bf-9ef2-922ad3807c4e/resource/46d4fe24-aa73-4959-8405-2b16b6cd590d/download/population-percentage-within-a-quarter-mile-of-alcohol-outlets-2014.xlsx",
+          "title": "Population Percentage Within a Quarter Mile of Alcohol Outlets 2014 (CSV)"
+        }
+      ],
+      "title": "Population Percentage Within a Quarter Mile of Alcohol Outlets 2014 (CSV)"
+    },
+    {
+      "format": "XLSX",
+      "name": "data-dictionary-population-percentage-within-a-quarter-mile-of-alcohol-outlets-2014",
+      "path": "data-dictionary-population-percentage-within-a-quarter-mile-of-alcohol-outlets-2014.xlsx",
+      "schema": {
+        "fields": [
+          {
+            "name": "County_FIPS",
+            "type": "number"
+          },
+          {
+            "name": "County",
+            "type": "string"
+          },
+          {
+            "name": "MPO Region",
+            "type": "string"
+          },
+          {
+            "name": "MPO_Region_code",
+            "type": "number"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "path": "https://data.chhs.ca.gov/dataset/56436b25-193c-40bf-9ef2-922ad3807c4e/resource/0ae95b22-5c43-49d2-a225-1a9b4af1a49e/download/populationpercentagewithinaquartermileofalcoholoutlets2014-dd.xlsx",
+          "title": "Data_Dictionary-Population Percentage within a Quarter Mile of Alcohol Outlets-2014"
+        }
+      ],
+      "title": "Data_Dictionary-Population Percentage within a Quarter Mile of Alcohol Outlets-2014"
+    }
+  ],
+  "secondary_sources": "California Department of Alcohol and Beverage Control (ABC), raw data April 2014 (http://www.abc.ca.gov/datport/ABC_Data_Export.zip). Department of Finance (DOF), Demographic Research Unit, Redistricting files, 2010 (http://www.dof.ca.gov/research/demographic/state_census_data_center/census_2010/#PL94).",
+  "sources": [
+    {
+      "name": "Office of Health Equity, Healthy Places Team",
+      "web": "https://www.cdph.ca.gov/Programs/OHE/Pages/Healthy-Communities-Data-and-Indicators-Project-(HCI).aspx"
+    }
+  ],
+  "temporal_coverage": "2014",
+  "title": "Population Percentage Within a Quarter Mile of Alcohol Outlets"
+}
