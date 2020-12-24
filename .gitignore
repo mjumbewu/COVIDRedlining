@@ -1,0 +1,6 @@
+data/
+ACS/ACS-Data-CensusTract/
+*.svg
+*.csv
+ACS/acs_2010
+ACS/acs_2018
