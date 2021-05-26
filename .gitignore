@@ -1,7 +1,6 @@
 data/
 ACS/ACS-Data-CensusTract/
-*.svg
-*.csv
-*.png
 ACS/acs_2010
 ACS/acs_2018
+ACS/mlruns/
+*.svg

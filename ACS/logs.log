@@ -3675,3 +3675,2487 @@ KeyboardInterrupt
 
 [2021 rows x 68 columns]
 2021-05-25 20:23:55,465:INFO:get_config() succesfully completed......................................
+2021-05-26 19:50:24,194:INFO:PyCaret Supervised Module
+2021-05-26 19:50:24,195:INFO:ML Usecase: regression
+2021-05-26 19:50:24,195:INFO:version 2.3.1
+2021-05-26 19:50:24,195:INFO:Initializing setup()
+2021-05-26 19:50:24,196:INFO:setup(target=reweighted_redline_index, ml_usecase=regression, available_plots={'parameter': 'Hyperparameters', 'residuals': 'Residuals', 'error': 'Prediction Error', 'cooks': 'Cooks Distance', 'rfe': 'Feature Selection', 'learning': 'Learning Curve', 'manifold': 'Manifold Learning', 'vc': 'Validation Curve', 'feature': 'Feature Importance', 'feature_all': 'Feature Importance (All)', 'tree': 'Decision Tree', 'residuals_interactive': 'Interactive Residuals'}, train_size=0.7, test_data=None, preprocess=True, imputation_type=simple, iterative_imputation_iters=5, categorical_features=None, categorical_imputation=constant, categorical_iterative_imputer=lightgbm, ordinal_features=None, high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=None, numeric_imputation=mean, numeric_iterative_imputer=lightgbm, date_features=None, ignore_features=None, normalize=False, normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear, pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05, remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=True, create_clusters=False, cluster_iter=20, polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None, group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_selection_method=classic, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01, fix_imbalance=False, fix_imbalance_method=None, transform_target=False, transform_target_method=box-cox, data_split_shuffle=True, data_split_stratify=False, fold_strategy=kfold, fold=10, fold_shuffle=False, fold_groups=None, n_jobs=-1, use_gpu=False, custom_pipeline=None, html=True, session_id=None, log_experiment=False, experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=False, verbose=True, profile=False, profile_kwargs=None, display=None)
+2021-05-26 19:50:24,196:INFO:Checking environment
+2021-05-26 19:50:24,196:INFO:python_version: 3.7.9
+2021-05-26 19:50:24,196:INFO:python_build: ('default', 'Oct 13 2020 21:10:49')
+2021-05-26 19:50:24,196:INFO:machine: x86_64
+2021-05-26 19:50:24,197:INFO:platform: Linux-5.4.95-42.163.amzn2.x86_64-x86_64-with-debian-10.6
+2021-05-26 19:50:24,200:WARNING:cannot find psutil installation. memory not traceable. Install psutil using pip to enable memory logging.
+2021-05-26 19:50:24,201:INFO:Checking libraries
+2021-05-26 19:50:24,201:INFO:pd==1.2.4
+2021-05-26 19:50:24,201:INFO:numpy==1.19.5
+2021-05-26 19:50:24,201:INFO:sklearn==0.23.2
+2021-05-26 19:50:24,201:INFO:lightgbm==3.2.1
+2021-05-26 19:50:24,201:INFO:catboost==0.25.1
+2021-05-26 19:50:24,201:WARNING:xgboost not found
+2021-05-26 19:50:24,967:INFO:mlflow==1.17.0
+2021-05-26 19:50:24,968:INFO:Checking Exceptions
+2021-05-26 19:50:24,968:INFO:Declaring global variables
+2021-05-26 19:50:24,968:INFO:USI: b1dc
+2021-05-26 19:50:24,968:INFO:pycaret_globals: {'fold_groups_param', 'gpu_param', '_ml_usecase', 'target_param', 'fix_imbalance_param', 'exp_name_log', 'experiment__', 'log_plots_param', 'fold_param', 'fold_groups_param_full', 'X_test', 'data_before_preprocess', 'fold_shuffle_param', 'logging_param', '_all_models', '_all_metrics', 'transform_target_method_param', 'y', 'y_train', 'pycaret_globals', '_all_models_internal', 'fix_imbalance_method_param', 'master_model_container', 'prep_pipe', 'display_container', 'X_train', 'imputation_regressor', 'transform_target_param', 'stratify_param', 'fold_generator', 'imputation_classifier', 'create_model_container', '_available_plots', 'seed', 'USI', 'X', 'html_param', 'y_test', 'iterative_imputation_iters_param', '_internal_pipeline', '_gpu_n_jobs_param', 'n_jobs_param'}
+2021-05-26 19:50:24,968:INFO:Preparing display monitor
+2021-05-26 19:50:24,968:INFO:Preparing display monitor
+2021-05-26 19:50:25,013:INFO:Importing libraries
+2021-05-26 19:50:25,013:INFO:Copying data for preprocessing
+2021-05-26 19:50:25,046:INFO:Declaring preprocessing parameters
+2021-05-26 19:50:25,053:INFO:Creating preprocessing pipeline
+2021-05-26 19:50:25,176:INFO:Preprocessing pipeline created successfully
+2021-05-26 19:50:25,176:ERROR:(Process Exit): setup has been interupted with user command 'quit'. setup must rerun.
+2021-05-26 19:50:25,176:INFO:Creating global containers
+2021-05-26 19:50:25,178:INFO:Internal pipeline: Pipeline(memory=None, steps=[('empty_step', 'passthrough')], verbose=False)
+2021-05-26 19:50:27,948:WARNING:Couldn't import xgboost.XGBRegressor
+2021-05-26 19:50:28,059:WARNING:Couldn't import xgboost.XGBRegressor
+2021-05-26 19:50:28,060:INFO:Creating grid variables
+2021-05-26 19:50:28,089:INFO:create_model_container: 0
+2021-05-26 19:50:28,089:INFO:master_model_container: 0
+2021-05-26 19:50:28,089:INFO:display_container: 1
+2021-05-26 19:50:28,096:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=True, features_todrop=[],
+                                      id_columns=[], ml_usecase='regression',
+                                      numerical_features=[],
+                                      target='reweighted_redline_index',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=None...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='reweighted_redline_index')),
+                ('fix_perfect', Remove_100(target='reweighted_redline_index')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough')],
+         verbose=False)
+2021-05-26 19:50:28,097:INFO:setup() succesfully completed......................................
+2021-05-26 19:51:50,027:INFO:PyCaret Supervised Module
+2021-05-26 19:51:50,027:INFO:ML Usecase: regression
+2021-05-26 19:51:50,028:INFO:version 2.3.1
+2021-05-26 19:51:50,028:INFO:Initializing setup()
+2021-05-26 19:51:50,028:INFO:setup(target=reweighted_redline_index, ml_usecase=regression, available_plots={'parameter': 'Hyperparameters', 'residuals': 'Residuals', 'error': 'Prediction Error', 'cooks': 'Cooks Distance', 'rfe': 'Feature Selection', 'learning': 'Learning Curve', 'manifold': 'Manifold Learning', 'vc': 'Validation Curve', 'feature': 'Feature Importance', 'feature_all': 'Feature Importance (All)', 'tree': 'Decision Tree', 'residuals_interactive': 'Interactive Residuals'}, train_size=0.7, test_data=None, preprocess=True, imputation_type=simple, iterative_imputation_iters=5, categorical_features=None, categorical_imputation=constant, categorical_iterative_imputer=lightgbm, ordinal_features=None, high_cardinality_features=None, high_cardinality_method=frequency, numeric_features=None, numeric_imputation=mean, numeric_iterative_imputer=lightgbm, date_features=None, ignore_features=None, normalize=False, normalize_method=zscore, transformation=False, transformation_method=yeo-johnson, handle_unknown_categorical=True, unknown_categorical_method=least_frequent, pca=False, pca_method=linear, pca_components=None, ignore_low_variance=False, combine_rare_levels=False, rare_level_threshold=0.1, bin_numeric_features=None, remove_outliers=False, outliers_threshold=0.05, remove_multicollinearity=False, multicollinearity_threshold=0.9, remove_perfect_collinearity=True, create_clusters=False, cluster_iter=20, polynomial_features=False, polynomial_degree=2, trigonometry_features=False, polynomial_threshold=0.1, group_features=None, group_names=None, feature_selection=False, feature_selection_threshold=0.8, feature_selection_method=classic, feature_interaction=False, feature_ratio=False, interaction_threshold=0.01, fix_imbalance=False, fix_imbalance_method=None, transform_target=False, transform_target_method=box-cox, data_split_shuffle=True, data_split_stratify=False, fold_strategy=kfold, fold=10, fold_shuffle=False, fold_groups=None, n_jobs=-1, use_gpu=False, custom_pipeline=None, html=True, session_id=None, log_experiment=False, experiment_name=None, log_plots=False, log_profile=False, log_data=False, silent=True, verbose=False, profile=False, profile_kwargs=None, display=None)
+2021-05-26 19:51:50,028:INFO:Checking environment
+2021-05-26 19:51:50,028:INFO:python_version: 3.7.9
+2021-05-26 19:51:50,028:INFO:python_build: ('default', 'Oct 13 2020 21:10:49')
+2021-05-26 19:51:50,028:INFO:machine: x86_64
+2021-05-26 19:51:50,028:INFO:platform: Linux-5.4.95-42.163.amzn2.x86_64-x86_64-with-debian-10.6
+2021-05-26 19:51:50,035:WARNING:cannot find psutil installation. memory not traceable. Install psutil using pip to enable memory logging.
+2021-05-26 19:51:50,035:INFO:Checking libraries
+2021-05-26 19:51:50,035:INFO:pd==1.2.4
+2021-05-26 19:51:50,035:INFO:numpy==1.19.5
+2021-05-26 19:51:50,035:INFO:sklearn==0.23.2
+2021-05-26 19:51:50,035:INFO:lightgbm==3.2.1
+2021-05-26 19:51:50,035:INFO:catboost==0.25.1
+2021-05-26 19:51:50,035:WARNING:xgboost not found
+2021-05-26 19:51:50,036:INFO:mlflow==1.17.0
+2021-05-26 19:51:50,036:INFO:Checking Exceptions
+2021-05-26 19:51:50,036:INFO:Declaring global variables
+2021-05-26 19:51:50,036:INFO:USI: 5d43
+2021-05-26 19:51:50,036:INFO:pycaret_globals: {'fold_groups_param', 'gpu_param', '_ml_usecase', 'target_param', 'fix_imbalance_param', 'exp_name_log', 'experiment__', 'log_plots_param', 'fold_param', 'fold_groups_param_full', 'X_test', 'data_before_preprocess', 'fold_shuffle_param', 'logging_param', '_all_models', '_all_metrics', 'transform_target_method_param', 'y', 'y_train', 'pycaret_globals', '_all_models_internal', 'fix_imbalance_method_param', 'master_model_container', 'prep_pipe', 'display_container', 'X_train', 'imputation_regressor', 'transform_target_param', 'stratify_param', 'fold_generator', 'imputation_classifier', 'create_model_container', '_available_plots', 'seed', 'USI', 'X', 'html_param', 'y_test', 'iterative_imputation_iters_param', '_internal_pipeline', '_gpu_n_jobs_param', 'n_jobs_param'}
+2021-05-26 19:51:50,036:INFO:Preparing display monitor
+2021-05-26 19:51:50,036:INFO:Importing libraries
+2021-05-26 19:51:50,036:INFO:Copying data for preprocessing
+2021-05-26 19:51:50,037:INFO:Declaring preprocessing parameters
+2021-05-26 19:51:50,043:INFO:Creating preprocessing pipeline
+2021-05-26 19:51:50,134:INFO:Preprocessing pipeline created successfully
+2021-05-26 19:51:50,134:ERROR:(Process Exit): setup has been interupted with user command 'quit'. setup must rerun.
+2021-05-26 19:51:50,134:INFO:Creating global containers
+2021-05-26 19:51:50,134:INFO:Internal pipeline: Pipeline(memory=None, steps=[('empty_step', 'passthrough')], verbose=False)
+2021-05-26 19:51:50,813:WARNING:Couldn't import xgboost.XGBRegressor
+2021-05-26 19:51:50,926:WARNING:Couldn't import xgboost.XGBRegressor
+2021-05-26 19:51:50,927:INFO:Creating grid variables
+2021-05-26 19:51:50,930:INFO:create_model_container: 0
+2021-05-26 19:51:50,930:INFO:master_model_container: 0
+2021-05-26 19:51:50,930:INFO:display_container: 1
+2021-05-26 19:51:50,935:INFO:Pipeline(memory=None,
+         steps=[('dtypes',
+                 DataTypes_Auto_infer(categorical_features=[],
+                                      display_types=False, features_todrop=[],
+                                      id_columns=[], ml_usecase='regression',
+                                      numerical_features=[],
+                                      target='reweighted_redline_index',
+                                      time_features=[])),
+                ('imputer',
+                 Simple_Imputer(categorical_strategy='not_available',
+                                fill_value_categorical=None,
+                                fill_value_numerical=Non...
+                ('binn', 'passthrough'), ('rem_outliers', 'passthrough'),
+                ('cluster_all', 'passthrough'),
+                ('dummy', Dummify(target='reweighted_redline_index')),
+                ('fix_perfect', Remove_100(target='reweighted_redline_index')),
+                ('clean_names', Clean_Colum_Names()),
+                ('feature_select', 'passthrough'), ('fix_multi', 'passthrough'),
+                ('dfs', 'passthrough'), ('pca', 'passthrough')],
+         verbose=False)
+2021-05-26 19:51:50,935:INFO:setup() succesfully completed......................................
+2021-05-26 19:52:09,854:INFO:Initializing create_model()
+2021-05-26 19:52:09,854:INFO:create_model(estimator=lr, fold=None, round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=True, verbose=False, system=True, metrics=None, display=None, kwargs={})
+2021-05-26 19:52:09,855:INFO:Checking exceptions
+2021-05-26 19:52:09,860:INFO:Importing libraries
+2021-05-26 19:52:09,860:INFO:Copying training dataset
+2021-05-26 19:52:09,861:INFO:Defining folds
+2021-05-26 19:52:09,861:INFO:Declaring metric variables
+2021-05-26 19:52:09,861:INFO:Importing untrained model
+2021-05-26 19:52:09,861:INFO:Linear Regression Imported succesfully
+2021-05-26 19:52:09,861:INFO:Starting cross validation
+2021-05-26 19:52:09,865:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:52:14,783:INFO:Calculating mean and std
+2021-05-26 19:52:14,783:INFO:Creating metrics dataframe
+2021-05-26 19:52:14,790:INFO:Finalizing model
+2021-05-26 19:52:14,812:INFO:Uploading results into container
+2021-05-26 19:52:14,812:INFO:Uploading model into container now
+2021-05-26 19:52:14,812:INFO:create_model_container: 1
+2021-05-26 19:52:14,812:INFO:master_model_container: 1
+2021-05-26 19:52:14,812:INFO:display_container: 2
+2021-05-26 19:52:14,813:INFO:LinearRegression(copy_X=True, fit_intercept=True, n_jobs=-1, normalize=False)
+2021-05-26 19:52:14,813:INFO:create_model() succesfully completed......................................
+2021-05-26 19:52:25,365:INFO:Initializing interpret_model()
+2021-05-26 19:52:25,365:INFO:interpret_model(estimator=LinearRegression(copy_X=True, fit_intercept=True, n_jobs=-1, normalize=False), use_train_data=False, X_new_sample=None, feature=None, kwargs={}, observation=None, plot=summary, save=False)
+2021-05-26 19:52:25,365:INFO:Checking exceptions
+2021-05-26 19:54:20,922:INFO:Initializing compare_models()
+2021-05-26 19:54:20,923:INFO:compare_models(include=None, fold=None, round=4, cross_validation=True, sort=R2, n_select=1, budget_time=None, turbo=True, errors=ignore, fit_kwargs=None, groups=None, verbose=False, display=None, exclude=None)
+2021-05-26 19:54:20,923:INFO:Checking exceptions
+2021-05-26 19:54:20,923:INFO:Preparing display monitor
+2021-05-26 19:54:20,924:INFO:Initializing Linear Regression
+2021-05-26 19:54:20,924:INFO:Total runtime is 1.2874603271484376e-06 minutes
+2021-05-26 19:54:20,924:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:20,924:INFO:Initializing create_model()
+2021-05-26 19:54:20,924:INFO:create_model(estimator=lr, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:20,924:INFO:Checking exceptions
+2021-05-26 19:54:20,924:INFO:Importing libraries
+2021-05-26 19:54:20,924:INFO:Copying training dataset
+2021-05-26 19:54:20,925:INFO:Defining folds
+2021-05-26 19:54:20,925:INFO:Declaring metric variables
+2021-05-26 19:54:20,925:INFO:Importing untrained model
+2021-05-26 19:54:20,925:INFO:Linear Regression Imported succesfully
+2021-05-26 19:54:20,925:INFO:Starting cross validation
+2021-05-26 19:54:20,926:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:21,295:INFO:Calculating mean and std
+2021-05-26 19:54:21,296:INFO:Creating metrics dataframe
+2021-05-26 19:54:21,299:INFO:Uploading results into container
+2021-05-26 19:54:21,299:INFO:Uploading model into container now
+2021-05-26 19:54:21,300:INFO:create_model_container: 2
+2021-05-26 19:54:21,300:INFO:master_model_container: 2
+2021-05-26 19:54:21,300:INFO:display_container: 3
+2021-05-26 19:54:21,300:INFO:LinearRegression(copy_X=True, fit_intercept=True, n_jobs=-1, normalize=False)
+2021-05-26 19:54:21,300:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:21,495:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:21,495:INFO:Creating metrics dataframe
+2021-05-26 19:54:21,504:INFO:Initializing Lasso Regression
+2021-05-26 19:54:21,504:INFO:Total runtime is 0.009666180610656739 minutes
+2021-05-26 19:54:21,504:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:21,504:INFO:Initializing create_model()
+2021-05-26 19:54:21,504:INFO:create_model(estimator=lasso, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:21,504:INFO:Checking exceptions
+2021-05-26 19:54:21,504:INFO:Importing libraries
+2021-05-26 19:54:21,504:INFO:Copying training dataset
+2021-05-26 19:54:21,505:INFO:Defining folds
+2021-05-26 19:54:21,505:INFO:Declaring metric variables
+2021-05-26 19:54:21,505:INFO:Importing untrained model
+2021-05-26 19:54:21,505:INFO:Lasso Regression Imported succesfully
+2021-05-26 19:54:21,505:INFO:Starting cross validation
+2021-05-26 19:54:21,505:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:21,961:INFO:Calculating mean and std
+2021-05-26 19:54:21,961:INFO:Creating metrics dataframe
+2021-05-26 19:54:21,964:INFO:Uploading results into container
+2021-05-26 19:54:21,965:INFO:Uploading model into container now
+2021-05-26 19:54:21,965:INFO:create_model_container: 3
+2021-05-26 19:54:21,965:INFO:master_model_container: 3
+2021-05-26 19:54:21,965:INFO:display_container: 3
+2021-05-26 19:54:21,965:INFO:Lasso(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=1000,
+      normalize=False, positive=False, precompute=False, random_state=5397,
+      selection='cyclic', tol=0.0001, warm_start=False)
+2021-05-26 19:54:21,965:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:22,174:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:22,174:INFO:Creating metrics dataframe
+2021-05-26 19:54:22,183:INFO:Initializing Ridge Regression
+2021-05-26 19:54:22,184:INFO:Total runtime is 0.020998088518778484 minutes
+2021-05-26 19:54:22,184:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:22,184:INFO:Initializing create_model()
+2021-05-26 19:54:22,184:INFO:create_model(estimator=ridge, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:22,184:INFO:Checking exceptions
+2021-05-26 19:54:22,184:INFO:Importing libraries
+2021-05-26 19:54:22,184:INFO:Copying training dataset
+2021-05-26 19:54:22,185:INFO:Defining folds
+2021-05-26 19:54:22,185:INFO:Declaring metric variables
+2021-05-26 19:54:22,185:INFO:Importing untrained model
+2021-05-26 19:54:22,185:INFO:Ridge Regression Imported succesfully
+2021-05-26 19:54:22,185:INFO:Starting cross validation
+2021-05-26 19:54:22,186:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:22,527:INFO:Calculating mean and std
+2021-05-26 19:54:22,527:INFO:Creating metrics dataframe
+2021-05-26 19:54:22,532:INFO:Uploading results into container
+2021-05-26 19:54:22,532:INFO:Uploading model into container now
+2021-05-26 19:54:22,533:INFO:create_model_container: 4
+2021-05-26 19:54:22,533:INFO:master_model_container: 4
+2021-05-26 19:54:22,533:INFO:display_container: 3
+2021-05-26 19:54:22,533:INFO:Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None,
+      normalize=False, random_state=5397, solver='auto', tol=0.001)
+2021-05-26 19:54:22,533:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:22,723:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:22,723:INFO:Creating metrics dataframe
+2021-05-26 19:54:22,730:INFO:Initializing Elastic Net
+2021-05-26 19:54:22,730:INFO:Total runtime is 0.030108229319254557 minutes
+2021-05-26 19:54:22,730:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:22,730:INFO:Initializing create_model()
+2021-05-26 19:54:22,730:INFO:create_model(estimator=en, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:22,730:INFO:Checking exceptions
+2021-05-26 19:54:22,731:INFO:Importing libraries
+2021-05-26 19:54:22,731:INFO:Copying training dataset
+2021-05-26 19:54:22,731:INFO:Defining folds
+2021-05-26 19:54:22,731:INFO:Declaring metric variables
+2021-05-26 19:54:22,731:INFO:Importing untrained model
+2021-05-26 19:54:22,731:INFO:Elastic Net Imported succesfully
+2021-05-26 19:54:22,731:INFO:Starting cross validation
+2021-05-26 19:54:22,732:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:23,313:INFO:Calculating mean and std
+2021-05-26 19:54:23,314:INFO:Creating metrics dataframe
+2021-05-26 19:54:23,319:INFO:Uploading results into container
+2021-05-26 19:54:23,319:INFO:Uploading model into container now
+2021-05-26 19:54:23,319:INFO:create_model_container: 5
+2021-05-26 19:54:23,319:INFO:master_model_container: 5
+2021-05-26 19:54:23,319:INFO:display_container: 3
+2021-05-26 19:54:23,320:INFO:ElasticNet(alpha=1.0, copy_X=True, fit_intercept=True, l1_ratio=0.5,
+           max_iter=1000, normalize=False, positive=False, precompute=False,
+           random_state=5397, selection='cyclic', tol=0.0001, warm_start=False)
+2021-05-26 19:54:23,320:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:23,530:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:23,530:INFO:Creating metrics dataframe
+2021-05-26 19:54:23,541:INFO:Initializing Least Angle Regression
+2021-05-26 19:54:23,541:INFO:Total runtime is 0.04362650314966837 minutes
+2021-05-26 19:54:23,541:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:23,542:INFO:Initializing create_model()
+2021-05-26 19:54:23,542:INFO:create_model(estimator=lar, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:23,542:INFO:Checking exceptions
+2021-05-26 19:54:23,542:INFO:Importing libraries
+2021-05-26 19:54:23,542:INFO:Copying training dataset
+2021-05-26 19:54:23,542:INFO:Defining folds
+2021-05-26 19:54:23,543:INFO:Declaring metric variables
+2021-05-26 19:54:23,543:INFO:Importing untrained model
+2021-05-26 19:54:23,543:INFO:Least Angle Regression Imported succesfully
+2021-05-26 19:54:23,543:INFO:Starting cross validation
+2021-05-26 19:54:23,544:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:24,039:WARNING:create_model() for lar raised an exception or returned all 0.0, trying without fit_kwargs:
+2021-05-26 19:54:24,042:WARNING:joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 431, in _process_worker
+    r = call_item()
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 285, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 595, in __call__
+    return self.func(*args, **kwargs)
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 263, in __call__
+    for func, args, kwargs in self.items]
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 263, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 560, in _fit_and_score
+    test_scores = _score(estimator, X_test, y_test, scorer)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 607, in _score
+    scores = scorer(estimator, X_test, y_test)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_scorer.py", line 88, in __call__
+    *args, **kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_scorer.py", line 213, in _score
+    **self._kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_regression.py", line 179, in mean_absolute_error
+    y_true, y_pred, multioutput)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_regression.py", line 86, in _check_reg_targets
+    y_pred = check_array(y_pred, ensure_2d=False, dtype=dtype)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 645, in check_array
+    allow_nan=force_all_finite == 'allow-nan')
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 99, in _assert_all_finite
+    msg_dtype if msg_dtype is not None else X.dtype)
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jovyan/venv/lib/python3.7/site-packages/pycaret/internal/tabular.py", line 2176, in compare_models
+    refit=False,
+  File "/home/jovyan/venv/lib/python3.7/site-packages/pycaret/internal/tabular.py", line 3125, in create_model_supervised
+    error_score=0,
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 248, in cross_validate
+    for train, test in cv.split(X, y, groups))
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 1054, in __call__
+    self.retrieve()
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 933, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 542, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/usr/local/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+
+2021-05-26 19:54:24,042:INFO:Initializing create_model()
+2021-05-26 19:54:24,043:INFO:create_model(estimator=lar, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs=None, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:24,043:INFO:Checking exceptions
+2021-05-26 19:54:24,043:INFO:Importing libraries
+2021-05-26 19:54:24,043:INFO:Copying training dataset
+2021-05-26 19:54:24,044:INFO:Defining folds
+2021-05-26 19:54:24,044:INFO:Declaring metric variables
+2021-05-26 19:54:24,044:INFO:Importing untrained model
+2021-05-26 19:54:24,044:INFO:Least Angle Regression Imported succesfully
+2021-05-26 19:54:24,045:INFO:Starting cross validation
+2021-05-26 19:54:24,045:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:28,284:ERROR:create_model() for lar raised an exception:
+2021-05-26 19:54:28,285:ERROR:joblib.externals.loky.process_executor._RemoteTraceback: 
+"""
+Traceback (most recent call last):
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 431, in _process_worker
+    r = call_item()
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/externals/loky/process_executor.py", line 285, in __call__
+    return self.fn(*self.args, **self.kwargs)
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 595, in __call__
+    return self.func(*args, **kwargs)
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 263, in __call__
+    for func, args, kwargs in self.items]
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 263, in <listcomp>
+    for func, args, kwargs in self.items]
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 560, in _fit_and_score
+    test_scores = _score(estimator, X_test, y_test, scorer)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 607, in _score
+    scores = scorer(estimator, X_test, y_test)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_scorer.py", line 88, in __call__
+    *args, **kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_scorer.py", line 213, in _score
+    **self._kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_regression.py", line 179, in mean_absolute_error
+    y_true, y_pred, multioutput)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/metrics/_regression.py", line 86, in _check_reg_targets
+    y_pred = check_array(y_pred, ensure_2d=False, dtype=dtype)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 645, in check_array
+    allow_nan=force_all_finite == 'allow-nan')
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 99, in _assert_all_finite
+    msg_dtype if msg_dtype is not None else X.dtype)
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+"""
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/jovyan/venv/lib/python3.7/site-packages/pycaret/internal/tabular.py", line 2195, in compare_models
+    refit=False,
+  File "/home/jovyan/venv/lib/python3.7/site-packages/pycaret/internal/tabular.py", line 3125, in create_model_supervised
+    error_score=0,
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/utils/validation.py", line 72, in inner_f
+    return f(**kwargs)
+  File "/home/jovyan/venv/lib/python3.7/site-packages/sklearn/model_selection/_validation.py", line 248, in cross_validate
+    for train, test in cv.split(X, y, groups))
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 1054, in __call__
+    self.retrieve()
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/parallel.py", line 933, in retrieve
+    self._output.extend(job.get(timeout=self.timeout))
+  File "/shared-libs/python3.7/py/lib/python3.7/site-packages/joblib/_parallel_backends.py", line 542, in wrap_future_result
+    return future.result(timeout=timeout)
+  File "/usr/local/lib/python3.7/concurrent/futures/_base.py", line 435, in result
+    return self.__get_result()
+  File "/usr/local/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+ValueError: Input contains NaN, infinity or a value too large for dtype('float64').
+
+2021-05-26 19:54:28,285:INFO:Initializing Lasso Least Angle Regression
+2021-05-26 19:54:28,285:INFO:Total runtime is 0.12269633213678996 minutes
+2021-05-26 19:54:28,285:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:28,286:INFO:Initializing create_model()
+2021-05-26 19:54:28,286:INFO:create_model(estimator=llar, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:28,286:INFO:Checking exceptions
+2021-05-26 19:54:28,286:INFO:Importing libraries
+2021-05-26 19:54:28,286:INFO:Copying training dataset
+2021-05-26 19:54:28,288:INFO:Defining folds
+2021-05-26 19:54:28,288:INFO:Declaring metric variables
+2021-05-26 19:54:28,288:INFO:Importing untrained model
+2021-05-26 19:54:28,289:INFO:Lasso Least Angle Regression Imported succesfully
+2021-05-26 19:54:28,289:INFO:Starting cross validation
+2021-05-26 19:54:28,289:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:31,285:INFO:Calculating mean and std
+2021-05-26 19:54:31,285:INFO:Creating metrics dataframe
+2021-05-26 19:54:31,292:INFO:Uploading results into container
+2021-05-26 19:54:31,292:INFO:Uploading model into container now
+2021-05-26 19:54:31,292:INFO:create_model_container: 6
+2021-05-26 19:54:31,292:INFO:master_model_container: 6
+2021-05-26 19:54:31,292:INFO:display_container: 3
+2021-05-26 19:54:31,292:INFO:LassoLars(alpha=1.0, copy_X=True, eps=2.220446049250313e-16, fit_intercept=True,
+          fit_path=True, jitter=None, max_iter=500, normalize=True,
+          positive=False, precompute='auto', random_state=5397, verbose=False)
+2021-05-26 19:54:31,293:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:31,509:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:31,509:INFO:Creating metrics dataframe
+2021-05-26 19:54:31,519:INFO:Initializing Orthogonal Matching Pursuit
+2021-05-26 19:54:31,519:INFO:Total runtime is 0.1765832265218099 minutes
+2021-05-26 19:54:31,519:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:31,519:INFO:Initializing create_model()
+2021-05-26 19:54:31,519:INFO:create_model(estimator=omp, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:31,519:INFO:Checking exceptions
+2021-05-26 19:54:31,519:INFO:Importing libraries
+2021-05-26 19:54:31,519:INFO:Copying training dataset
+2021-05-26 19:54:31,520:INFO:Defining folds
+2021-05-26 19:54:31,520:INFO:Declaring metric variables
+2021-05-26 19:54:31,520:INFO:Importing untrained model
+2021-05-26 19:54:31,520:INFO:Orthogonal Matching Pursuit Imported succesfully
+2021-05-26 19:54:31,521:INFO:Starting cross validation
+2021-05-26 19:54:31,521:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:31,767:INFO:Calculating mean and std
+2021-05-26 19:54:31,768:INFO:Creating metrics dataframe
+2021-05-26 19:54:31,773:INFO:Uploading results into container
+2021-05-26 19:54:31,773:INFO:Uploading model into container now
+2021-05-26 19:54:31,773:INFO:create_model_container: 7
+2021-05-26 19:54:31,774:INFO:master_model_container: 7
+2021-05-26 19:54:31,774:INFO:display_container: 3
+2021-05-26 19:54:31,774:INFO:OrthogonalMatchingPursuit(fit_intercept=True, n_nonzero_coefs=None,
+                          normalize=True, precompute='auto', tol=None)
+2021-05-26 19:54:31,774:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:31,955:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:31,955:INFO:Creating metrics dataframe
+2021-05-26 19:54:31,962:INFO:Initializing Bayesian Ridge
+2021-05-26 19:54:31,962:INFO:Total runtime is 0.18396642208099367 minutes
+2021-05-26 19:54:31,962:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:31,962:INFO:Initializing create_model()
+2021-05-26 19:54:31,962:INFO:create_model(estimator=br, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:31,962:INFO:Checking exceptions
+2021-05-26 19:54:31,962:INFO:Importing libraries
+2021-05-26 19:54:31,962:INFO:Copying training dataset
+2021-05-26 19:54:31,963:INFO:Defining folds
+2021-05-26 19:54:31,963:INFO:Declaring metric variables
+2021-05-26 19:54:31,963:INFO:Importing untrained model
+2021-05-26 19:54:31,963:INFO:Bayesian Ridge Imported succesfully
+2021-05-26 19:54:31,963:INFO:Starting cross validation
+2021-05-26 19:54:31,963:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:32,498:INFO:Calculating mean and std
+2021-05-26 19:54:32,498:INFO:Creating metrics dataframe
+2021-05-26 19:54:32,502:INFO:Uploading results into container
+2021-05-26 19:54:32,502:INFO:Uploading model into container now
+2021-05-26 19:54:32,502:INFO:create_model_container: 8
+2021-05-26 19:54:32,502:INFO:master_model_container: 8
+2021-05-26 19:54:32,502:INFO:display_container: 3
+2021-05-26 19:54:32,503:INFO:BayesianRidge(alpha_1=1e-06, alpha_2=1e-06, alpha_init=None,
+              compute_score=False, copy_X=True, fit_intercept=True,
+              lambda_1=1e-06, lambda_2=1e-06, lambda_init=None, n_iter=300,
+              normalize=False, tol=0.001, verbose=False)
+2021-05-26 19:54:32,503:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:32,688:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:32,688:INFO:Creating metrics dataframe
+2021-05-26 19:54:32,694:INFO:Initializing Passive Aggressive Regressor
+2021-05-26 19:54:32,694:INFO:Total runtime is 0.19617722829182946 minutes
+2021-05-26 19:54:32,694:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:32,695:INFO:Initializing create_model()
+2021-05-26 19:54:32,695:INFO:create_model(estimator=par, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:32,695:INFO:Checking exceptions
+2021-05-26 19:54:32,695:INFO:Importing libraries
+2021-05-26 19:54:32,695:INFO:Copying training dataset
+2021-05-26 19:54:32,695:INFO:Defining folds
+2021-05-26 19:54:32,695:INFO:Declaring metric variables
+2021-05-26 19:54:32,695:INFO:Importing untrained model
+2021-05-26 19:54:32,696:INFO:Passive Aggressive Regressor Imported succesfully
+2021-05-26 19:54:32,696:INFO:Starting cross validation
+2021-05-26 19:54:32,696:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:33,451:INFO:Calculating mean and std
+2021-05-26 19:54:33,451:INFO:Creating metrics dataframe
+2021-05-26 19:54:33,463:INFO:Uploading results into container
+2021-05-26 19:54:33,463:INFO:Uploading model into container now
+2021-05-26 19:54:33,463:INFO:create_model_container: 9
+2021-05-26 19:54:33,463:INFO:master_model_container: 9
+2021-05-26 19:54:33,463:INFO:display_container: 3
+2021-05-26 19:54:33,464:INFO:PassiveAggressiveRegressor(C=1.0, average=False, early_stopping=False,
+                           epsilon=0.1, fit_intercept=True,
+                           loss='epsilon_insensitive', max_iter=1000,
+                           n_iter_no_change=5, random_state=5397, shuffle=True,
+                           tol=0.001, validation_fraction=0.1, verbose=0,
+                           warm_start=False)
+2021-05-26 19:54:33,464:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:33,666:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:33,666:INFO:Creating metrics dataframe
+2021-05-26 19:54:33,672:INFO:Initializing Huber Regressor
+2021-05-26 19:54:33,672:INFO:Total runtime is 0.2124798099199931 minutes
+2021-05-26 19:54:33,672:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:33,673:INFO:Initializing create_model()
+2021-05-26 19:54:33,673:INFO:create_model(estimator=huber, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:33,673:INFO:Checking exceptions
+2021-05-26 19:54:33,673:INFO:Importing libraries
+2021-05-26 19:54:33,673:INFO:Copying training dataset
+2021-05-26 19:54:33,673:INFO:Defining folds
+2021-05-26 19:54:33,673:INFO:Declaring metric variables
+2021-05-26 19:54:33,674:INFO:Importing untrained model
+2021-05-26 19:54:33,674:INFO:Huber Regressor Imported succesfully
+2021-05-26 19:54:33,674:INFO:Starting cross validation
+2021-05-26 19:54:33,674:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:35,938:INFO:Calculating mean and std
+2021-05-26 19:54:35,939:INFO:Creating metrics dataframe
+2021-05-26 19:54:35,944:INFO:Uploading results into container
+2021-05-26 19:54:35,944:INFO:Uploading model into container now
+2021-05-26 19:54:35,944:INFO:create_model_container: 10
+2021-05-26 19:54:35,944:INFO:master_model_container: 10
+2021-05-26 19:54:35,944:INFO:display_container: 3
+2021-05-26 19:54:35,945:INFO:HuberRegressor(alpha=0.0001, epsilon=1.35, fit_intercept=True, max_iter=100,
+               tol=1e-05, warm_start=False)
+2021-05-26 19:54:35,945:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:36,134:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:36,134:INFO:Creating metrics dataframe
+2021-05-26 19:54:36,141:INFO:Initializing K Neighbors Regressor
+2021-05-26 19:54:36,141:INFO:Total runtime is 0.25361878871917726 minutes
+2021-05-26 19:54:36,141:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:36,141:INFO:Initializing create_model()
+2021-05-26 19:54:36,141:INFO:create_model(estimator=knn, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:36,141:INFO:Checking exceptions
+2021-05-26 19:54:36,141:INFO:Importing libraries
+2021-05-26 19:54:36,141:INFO:Copying training dataset
+2021-05-26 19:54:36,142:INFO:Defining folds
+2021-05-26 19:54:36,142:INFO:Declaring metric variables
+2021-05-26 19:54:36,142:INFO:Importing untrained model
+2021-05-26 19:54:36,142:INFO:K Neighbors Regressor Imported succesfully
+2021-05-26 19:54:36,142:INFO:Starting cross validation
+2021-05-26 19:54:36,143:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:37,073:INFO:Calculating mean and std
+2021-05-26 19:54:37,073:INFO:Creating metrics dataframe
+2021-05-26 19:54:37,077:INFO:Uploading results into container
+2021-05-26 19:54:37,077:INFO:Uploading model into container now
+2021-05-26 19:54:37,077:INFO:create_model_container: 11
+2021-05-26 19:54:37,077:INFO:master_model_container: 11
+2021-05-26 19:54:37,077:INFO:display_container: 3
+2021-05-26 19:54:37,077:INFO:KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+                    metric_params=None, n_jobs=-1, n_neighbors=5, p=2,
+                    weights='uniform')
+2021-05-26 19:54:37,077:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:37,261:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:37,261:INFO:Creating metrics dataframe
+2021-05-26 19:54:37,268:INFO:Initializing Decision Tree Regressor
+2021-05-26 19:54:37,268:INFO:Total runtime is 0.2724063277244568 minutes
+2021-05-26 19:54:37,268:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:37,268:INFO:Initializing create_model()
+2021-05-26 19:54:37,268:INFO:create_model(estimator=dt, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:37,268:INFO:Checking exceptions
+2021-05-26 19:54:37,268:INFO:Importing libraries
+2021-05-26 19:54:37,268:INFO:Copying training dataset
+2021-05-26 19:54:37,269:INFO:Defining folds
+2021-05-26 19:54:37,269:INFO:Declaring metric variables
+2021-05-26 19:54:37,269:INFO:Importing untrained model
+2021-05-26 19:54:37,269:INFO:Decision Tree Regressor Imported succesfully
+2021-05-26 19:54:37,269:INFO:Starting cross validation
+2021-05-26 19:54:37,270:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:54:40,121:INFO:Calculating mean and std
+2021-05-26 19:54:40,121:INFO:Creating metrics dataframe
+2021-05-26 19:54:40,125:INFO:Uploading results into container
+2021-05-26 19:54:40,125:INFO:Uploading model into container now
+2021-05-26 19:54:40,125:INFO:create_model_container: 12
+2021-05-26 19:54:40,125:INFO:master_model_container: 12
+2021-05-26 19:54:40,125:INFO:display_container: 3
+2021-05-26 19:54:40,125:INFO:DecisionTreeRegressor(ccp_alpha=0.0, criterion='mse', max_depth=None,
+                      max_features=None, max_leaf_nodes=None,
+                      min_impurity_decrease=0.0, min_impurity_split=None,
+                      min_samples_leaf=1, min_samples_split=2,
+                      min_weight_fraction_leaf=0.0, presort='deprecated',
+                      random_state=5397, splitter='best')
+2021-05-26 19:54:40,125:INFO:create_model() succesfully completed......................................
+2021-05-26 19:54:40,314:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:54:40,314:INFO:Creating metrics dataframe
+2021-05-26 19:54:40,320:INFO:Initializing Random Forest Regressor
+2021-05-26 19:54:40,321:INFO:Total runtime is 0.32328221797943113 minutes
+2021-05-26 19:54:40,321:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:54:40,321:INFO:Initializing create_model()
+2021-05-26 19:54:40,321:INFO:create_model(estimator=rf, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:54:40,321:INFO:Checking exceptions
+2021-05-26 19:54:40,321:INFO:Importing libraries
+2021-05-26 19:54:40,321:INFO:Copying training dataset
+2021-05-26 19:54:40,322:INFO:Defining folds
+2021-05-26 19:54:40,322:INFO:Declaring metric variables
+2021-05-26 19:54:40,322:INFO:Importing untrained model
+2021-05-26 19:54:40,322:INFO:Random Forest Regressor Imported succesfully
+2021-05-26 19:54:40,322:INFO:Starting cross validation
+2021-05-26 19:54:40,323:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:57:35,099:INFO:Calculating mean and std
+2021-05-26 19:57:35,111:INFO:Creating metrics dataframe
+2021-05-26 19:57:35,115:INFO:Uploading results into container
+2021-05-26 19:57:35,115:INFO:Uploading model into container now
+2021-05-26 19:57:35,115:INFO:create_model_container: 13
+2021-05-26 19:57:35,115:INFO:master_model_container: 13
+2021-05-26 19:57:35,115:INFO:display_container: 3
+2021-05-26 19:57:35,115:INFO:RandomForestRegressor(bootstrap=True, ccp_alpha=0.0, criterion='mse',
+                      max_depth=None, max_features='auto', max_leaf_nodes=None,
+                      max_samples=None, min_impurity_decrease=0.0,
+                      min_impurity_split=None, min_samples_leaf=1,
+                      min_samples_split=2, min_weight_fraction_leaf=0.0,
+                      n_estimators=100, n_jobs=-1, oob_score=False,
+                      random_state=5397, verbose=0, warm_start=False)
+2021-05-26 19:57:35,115:INFO:create_model() succesfully completed......................................
+2021-05-26 19:57:35,300:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:57:35,300:INFO:Creating metrics dataframe
+2021-05-26 19:57:35,307:INFO:Initializing Extra Trees Regressor
+2021-05-26 19:57:35,307:INFO:Total runtime is 3.2397239724795024 minutes
+2021-05-26 19:57:35,307:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:57:35,307:INFO:Initializing create_model()
+2021-05-26 19:57:35,307:INFO:create_model(estimator=et, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:57:35,307:INFO:Checking exceptions
+2021-05-26 19:57:35,307:INFO:Importing libraries
+2021-05-26 19:57:35,307:INFO:Copying training dataset
+2021-05-26 19:57:35,308:INFO:Defining folds
+2021-05-26 19:57:35,308:INFO:Declaring metric variables
+2021-05-26 19:57:35,308:INFO:Importing untrained model
+2021-05-26 19:57:35,308:INFO:Extra Trees Regressor Imported succesfully
+2021-05-26 19:57:35,309:INFO:Starting cross validation
+2021-05-26 19:57:35,309:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:58:20,160:INFO:Calculating mean and std
+2021-05-26 19:58:20,161:INFO:Creating metrics dataframe
+2021-05-26 19:58:20,166:INFO:Uploading results into container
+2021-05-26 19:58:20,166:INFO:Uploading model into container now
+2021-05-26 19:58:20,166:INFO:create_model_container: 14
+2021-05-26 19:58:20,166:INFO:master_model_container: 14
+2021-05-26 19:58:20,166:INFO:display_container: 3
+2021-05-26 19:58:20,167:INFO:ExtraTreesRegressor(bootstrap=False, ccp_alpha=0.0, criterion='mse',
+                    max_depth=None, max_features='auto', max_leaf_nodes=None,
+                    max_samples=None, min_impurity_decrease=0.0,
+                    min_impurity_split=None, min_samples_leaf=1,
+                    min_samples_split=2, min_weight_fraction_leaf=0.0,
+                    n_estimators=100, n_jobs=-1, oob_score=False,
+                    random_state=5397, verbose=0, warm_start=False)
+2021-05-26 19:58:20,167:INFO:create_model() succesfully completed......................................
+2021-05-26 19:58:20,360:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:58:20,360:INFO:Creating metrics dataframe
+2021-05-26 19:58:20,367:INFO:Initializing AdaBoost Regressor
+2021-05-26 19:58:20,367:INFO:Total runtime is 3.990725870927175 minutes
+2021-05-26 19:58:20,367:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:58:20,367:INFO:Initializing create_model()
+2021-05-26 19:58:20,367:INFO:create_model(estimator=ada, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:58:20,368:INFO:Checking exceptions
+2021-05-26 19:58:20,368:INFO:Importing libraries
+2021-05-26 19:58:20,368:INFO:Copying training dataset
+2021-05-26 19:58:20,368:INFO:Defining folds
+2021-05-26 19:58:20,368:INFO:Declaring metric variables
+2021-05-26 19:58:20,368:INFO:Importing untrained model
+2021-05-26 19:58:20,368:INFO:AdaBoost Regressor Imported succesfully
+2021-05-26 19:58:20,368:INFO:Starting cross validation
+2021-05-26 19:58:20,369:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:58:41,279:INFO:Calculating mean and std
+2021-05-26 19:58:41,280:INFO:Creating metrics dataframe
+2021-05-26 19:58:41,283:INFO:Uploading results into container
+2021-05-26 19:58:41,283:INFO:Uploading model into container now
+2021-05-26 19:58:41,283:INFO:create_model_container: 15
+2021-05-26 19:58:41,283:INFO:master_model_container: 15
+2021-05-26 19:58:41,284:INFO:display_container: 3
+2021-05-26 19:58:41,284:INFO:AdaBoostRegressor(base_estimator=None, learning_rate=1.0, loss='linear',
+                  n_estimators=50, random_state=5397)
+2021-05-26 19:58:41,284:INFO:create_model() succesfully completed......................................
+2021-05-26 19:58:41,466:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:58:41,466:INFO:Creating metrics dataframe
+2021-05-26 19:58:41,473:INFO:Initializing Gradient Boosting Regressor
+2021-05-26 19:58:41,473:INFO:Total runtime is 4.342490287621816 minutes
+2021-05-26 19:58:41,473:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:58:41,473:INFO:Initializing create_model()
+2021-05-26 19:58:41,473:INFO:create_model(estimator=gbr, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:58:41,473:INFO:Checking exceptions
+2021-05-26 19:58:41,473:INFO:Importing libraries
+2021-05-26 19:58:41,473:INFO:Copying training dataset
+2021-05-26 19:58:41,474:INFO:Defining folds
+2021-05-26 19:58:41,474:INFO:Declaring metric variables
+2021-05-26 19:58:41,474:INFO:Importing untrained model
+2021-05-26 19:58:41,474:INFO:Gradient Boosting Regressor Imported succesfully
+2021-05-26 19:58:41,475:INFO:Starting cross validation
+2021-05-26 19:58:41,475:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:59:46,767:INFO:Calculating mean and std
+2021-05-26 19:59:46,767:INFO:Creating metrics dataframe
+2021-05-26 19:59:46,773:INFO:Uploading results into container
+2021-05-26 19:59:46,773:INFO:Uploading model into container now
+2021-05-26 19:59:46,773:INFO:create_model_container: 16
+2021-05-26 19:59:46,773:INFO:master_model_container: 16
+2021-05-26 19:59:46,773:INFO:display_container: 3
+2021-05-26 19:59:46,774:INFO:GradientBoostingRegressor(alpha=0.9, ccp_alpha=0.0, criterion='friedman_mse',
+                          init=None, learning_rate=0.1, loss='ls', max_depth=3,
+                          max_features=None, max_leaf_nodes=None,
+                          min_impurity_decrease=0.0, min_impurity_split=None,
+                          min_samples_leaf=1, min_samples_split=2,
+                          min_weight_fraction_leaf=0.0, n_estimators=100,
+                          n_iter_no_change=None, presort='deprecated',
+                          random_state=5397, subsample=1.0, tol=0.0001,
+                          validation_fraction=0.1, verbose=0, warm_start=False)
+2021-05-26 19:59:46,774:INFO:create_model() succesfully completed......................................
+2021-05-26 19:59:46,993:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:59:46,993:INFO:Creating metrics dataframe
+2021-05-26 19:59:47,003:INFO:Initializing Light Gradient Boosting Machine
+2021-05-26 19:59:47,003:INFO:Total runtime is 5.4346622665723165 minutes
+2021-05-26 19:59:47,003:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:59:47,004:INFO:Initializing create_model()
+2021-05-26 19:59:47,004:INFO:create_model(estimator=lightgbm, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:59:47,004:INFO:Checking exceptions
+2021-05-26 19:59:47,004:INFO:Importing libraries
+2021-05-26 19:59:47,004:INFO:Copying training dataset
+2021-05-26 19:59:47,004:INFO:Defining folds
+2021-05-26 19:59:47,005:INFO:Declaring metric variables
+2021-05-26 19:59:47,005:INFO:Importing untrained model
+2021-05-26 19:59:47,005:INFO:Light Gradient Boosting Machine Imported succesfully
+2021-05-26 19:59:47,005:INFO:Starting cross validation
+2021-05-26 19:59:47,006:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 19:59:55,976:INFO:Calculating mean and std
+2021-05-26 19:59:55,977:INFO:Creating metrics dataframe
+2021-05-26 19:59:55,980:INFO:Uploading results into container
+2021-05-26 19:59:55,980:INFO:Uploading model into container now
+2021-05-26 19:59:55,980:INFO:create_model_container: 17
+2021-05-26 19:59:55,980:INFO:master_model_container: 17
+2021-05-26 19:59:55,980:INFO:display_container: 3
+2021-05-26 19:59:55,981:INFO:LGBMRegressor(boosting_type='gbdt', class_weight=None, colsample_bytree=1.0,
+              importance_type='split', learning_rate=0.1, max_depth=-1,
+              min_child_samples=20, min_child_weight=0.001, min_split_gain=0.0,
+              n_estimators=100, n_jobs=-1, num_leaves=31, objective=None,
+              random_state=5397, reg_alpha=0.0, reg_lambda=0.0, silent=True,
+              subsample=1.0, subsample_for_bin=200000, subsample_freq=0)
+2021-05-26 19:59:55,981:INFO:create_model() succesfully completed......................................
+2021-05-26 19:59:56,171:INFO:SubProcess create_model() end ==================================
+2021-05-26 19:59:56,171:INFO:Creating metrics dataframe
+2021-05-26 19:59:56,181:INFO:Initializing CatBoost Regressor
+2021-05-26 19:59:56,181:INFO:Total runtime is 5.587623568375905 minutes
+2021-05-26 19:59:56,181:INFO:SubProcess create_model() called ==================================
+2021-05-26 19:59:56,181:INFO:Initializing create_model()
+2021-05-26 19:59:56,181:INFO:create_model(estimator=catboost, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=False, verbose=False, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60ab03c10>, kwargs={})
+2021-05-26 19:59:56,182:INFO:Checking exceptions
+2021-05-26 19:59:56,182:INFO:Importing libraries
+2021-05-26 19:59:56,182:INFO:Copying training dataset
+2021-05-26 19:59:56,182:INFO:Defining folds
+2021-05-26 19:59:56,182:INFO:Declaring metric variables
+2021-05-26 19:59:56,182:INFO:Importing untrained model
+2021-05-26 19:59:56,183:INFO:CatBoost Regressor Imported succesfully
+2021-05-26 19:59:56,183:INFO:Starting cross validation
+2021-05-26 19:59:56,184:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 20:04:53,595:INFO:Calculating mean and std
+2021-05-26 20:04:53,596:INFO:Creating metrics dataframe
+2021-05-26 20:04:53,600:INFO:Uploading results into container
+2021-05-26 20:04:53,600:INFO:Uploading model into container now
+2021-05-26 20:04:53,600:INFO:create_model_container: 18
+2021-05-26 20:04:53,600:INFO:master_model_container: 18
+2021-05-26 20:04:53,600:INFO:display_container: 3
+2021-05-26 20:04:53,600:INFO:<catboost.core.CatBoostRegressor object at 0x7fd60aa27310>
+2021-05-26 20:04:53,600:INFO:create_model() succesfully completed......................................
+2021-05-26 20:04:53,783:INFO:SubProcess create_model() end ==================================
+2021-05-26 20:04:53,783:INFO:Creating metrics dataframe
+2021-05-26 20:04:53,792:INFO:Initializing create_model()
+2021-05-26 20:04:53,792:INFO:create_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60aa27310>, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=False, predict=False, fit_kwargs={}, groups=None, refit=True, verbose=False, system=False, metrics=None, display=None, kwargs={})
+2021-05-26 20:04:53,792:INFO:Checking exceptions
+2021-05-26 20:04:53,792:INFO:Importing libraries
+2021-05-26 20:04:53,792:INFO:Copying training dataset
+2021-05-26 20:04:53,792:INFO:Defining folds
+2021-05-26 20:04:53,792:INFO:Declaring metric variables
+2021-05-26 20:04:53,792:INFO:Importing untrained model
+2021-05-26 20:04:53,792:INFO:Declaring custom model
+2021-05-26 20:04:53,793:INFO:CatBoost Regressor Imported succesfully
+2021-05-26 20:04:53,793:INFO:Cross validation set to False
+2021-05-26 20:04:53,793:INFO:Fitting Model
+2021-05-26 20:05:18,012:INFO:<catboost.core.CatBoostRegressor object at 0x7fd60da27b50>
+2021-05-26 20:05:18,012:INFO:create_models() succesfully completed......................................
+2021-05-26 20:05:18,218:INFO:create_model_container: 18
+2021-05-26 20:05:18,219:INFO:master_model_container: 18
+2021-05-26 20:05:18,219:INFO:display_container: 3
+2021-05-26 20:05:18,219:INFO:<catboost.core.CatBoostRegressor object at 0x7fd60da27b50>
+2021-05-26 20:05:18,219:INFO:compare_models() succesfully completed......................................
+2021-05-26 20:05:44,640:INFO:Initializing interpret_model()
+2021-05-26 20:05:44,640:INFO:interpret_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60da27b50>, use_train_data=False, X_new_sample=None, feature=None, kwargs={}, observation=None, plot=summary, save=False)
+2021-05-26 20:05:44,641:INFO:Checking exceptions
+2021-05-26 20:05:44,641:INFO:plot type: summary
+2021-05-26 20:05:44,641:INFO:Creating TreeExplainer
+2021-05-26 20:05:44,641:INFO:Compiling shap values
+2021-05-26 20:05:48,917:INFO:Visual Rendered Successfully
+2021-05-26 20:05:48,918:INFO:interpret_model() succesfully completed......................................
+2021-05-26 20:06:00,863:INFO:Initializing interpret_model()
+2021-05-26 20:06:00,863:INFO:interpret_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60da27b50>, use_train_data=False, X_new_sample=None, feature=None, kwargs={}, observation=None, plot=summary, save=False)
+2021-05-26 20:06:00,863:INFO:Checking exceptions
+2021-05-26 20:06:00,863:INFO:plot type: summary
+2021-05-26 20:06:00,864:INFO:Creating TreeExplainer
+2021-05-26 20:06:00,864:INFO:Compiling shap values
+2021-05-26 20:06:04,989:INFO:Visual Rendered Successfully
+2021-05-26 20:06:04,989:INFO:interpret_model() succesfully completed......................................
+2021-05-26 20:06:45,517:INFO:Initializing get_config()
+2021-05-26 20:06:45,517:INFO:get_config(variable=X_test)
+2021-05-26 20:06:45,530:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:06:45,530:INFO:get_config() succesfully completed......................................
+2021-05-26 20:06:51,622:INFO:Initializing get_config()
+2021-05-26 20:06:51,622:INFO:get_config(variable=X_test)
+2021-05-26 20:06:51,635:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:06:51,636:INFO:get_config() succesfully completed......................................
+2021-05-26 20:11:01,684:INFO:Initializing interpret_model()
+2021-05-26 20:11:01,694:INFO:interpret_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60da27b50>, use_train_data=False, X_new_sample=None, feature=None, kwargs={}, observation=None, plot=summary, save=False)
+2021-05-26 20:11:01,694:INFO:Checking exceptions
+2021-05-26 20:11:01,694:INFO:plot type: summary
+2021-05-26 20:11:01,694:INFO:Creating TreeExplainer
+2021-05-26 20:11:01,695:INFO:Compiling shap values
+2021-05-26 20:11:05,828:INFO:Visual Rendered Successfully
+2021-05-26 20:11:05,829:INFO:interpret_model() succesfully completed......................................
+2021-05-26 20:12:03,406:INFO:Initializing tune_model()
+2021-05-26 20:12:03,406:INFO:tune_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60da27b50>, fold=None, round=4, n_iter=10, custom_grid=None, optimize=R2, custom_scorer=None, search_library=scikit-learn, search_algorithm=None, early_stopping=False, early_stopping_max_iters=10, choose_better=False, fit_kwargs=None, groups=None, return_tuner=False, verbose=False, tuner_verbose=True, display=None, kwargs={})
+2021-05-26 20:12:03,406:INFO:Checking exceptions
+2021-05-26 20:12:03,406:INFO:Copying training dataset
+2021-05-26 20:12:03,407:INFO:Checking base model
+2021-05-26 20:12:03,407:INFO:Base model : CatBoost Regressor
+2021-05-26 20:12:03,408:INFO:Declaring metric variables
+2021-05-26 20:12:03,408:INFO:Defining Hyperparameters
+2021-05-26 20:12:03,622:INFO:Tuning with n_jobs=-1
+2021-05-26 20:12:03,622:INFO:Initializing RandomizedSearchCV
+2021-05-26 20:20:32,586:INFO:best_params: {'actual_estimator__random_strength': 0.2, 'actual_estimator__n_estimators': 160, 'actual_estimator__l2_leaf_reg': 9, 'actual_estimator__eta': 0.2, 'actual_estimator__depth': 5}
+2021-05-26 20:20:32,587:INFO:Hyperparameter search completed
+2021-05-26 20:20:32,587:INFO:SubProcess create_model() called ==================================
+2021-05-26 20:20:32,588:INFO:Initializing create_model()
+2021-05-26 20:20:32,588:INFO:create_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60d5e0510>, fold=KFold(n_splits=10, random_state=None, shuffle=False), round=4, cross_validation=True, predict=True, fit_kwargs={}, groups=None, refit=True, verbose=True, system=False, metrics=None, display=<pycaret.internal.Display.Display object at 0x7fd60d5e0690>, kwargs={'random_strength': 0.2, 'n_estimators': 160, 'l2_leaf_reg': 9, 'eta': 0.2, 'depth': 5})
+2021-05-26 20:20:32,588:INFO:Checking exceptions
+2021-05-26 20:20:32,588:INFO:Importing libraries
+2021-05-26 20:20:32,588:INFO:Copying training dataset
+2021-05-26 20:20:32,589:INFO:Defining folds
+2021-05-26 20:20:32,589:INFO:Declaring metric variables
+2021-05-26 20:20:32,590:INFO:Importing untrained model
+2021-05-26 20:20:32,590:INFO:Declaring custom model
+2021-05-26 20:20:32,590:INFO:CatBoost Regressor Imported succesfully
+2021-05-26 20:20:32,590:INFO:Starting cross validation
+2021-05-26 20:20:32,591:INFO:Cross validating with KFold(n_splits=10, random_state=None, shuffle=False), n_jobs=-1
+2021-05-26 20:21:02,319:INFO:Calculating mean and std
+2021-05-26 20:21:02,320:INFO:Creating metrics dataframe
+2021-05-26 20:21:02,326:INFO:Finalizing model
+2021-05-26 20:21:04,875:INFO:Uploading results into container
+2021-05-26 20:21:04,875:INFO:Uploading model into container now
+2021-05-26 20:21:04,876:INFO:create_model_container: 19
+2021-05-26 20:21:04,876:INFO:master_model_container: 19
+2021-05-26 20:21:04,876:INFO:display_container: 4
+2021-05-26 20:21:04,876:INFO:<catboost.core.CatBoostRegressor object at 0x7fd60aaba290>
+2021-05-26 20:21:04,876:INFO:create_model() succesfully completed......................................
+2021-05-26 20:21:05,164:INFO:SubProcess create_model() end ==================================
+2021-05-26 20:21:05,165:INFO:create_model_container: 19
+2021-05-26 20:21:05,165:INFO:master_model_container: 19
+2021-05-26 20:21:05,165:INFO:display_container: 4
+2021-05-26 20:21:05,165:INFO:<catboost.core.CatBoostRegressor object at 0x7fd60aaba290>
+2021-05-26 20:21:05,165:INFO:tune_model() succesfully completed......................................
+2021-05-26 20:21:05,407:INFO:Initializing interpret_model()
+2021-05-26 20:21:05,408:INFO:interpret_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60aaba290>, use_train_data=False, X_new_sample=None, feature=None, kwargs={}, observation=None, plot=summary, save=False)
+2021-05-26 20:21:05,408:INFO:Checking exceptions
+2021-05-26 20:21:05,408:INFO:plot type: summary
+2021-05-26 20:21:05,408:INFO:Creating TreeExplainer
+2021-05-26 20:21:05,409:INFO:Compiling shap values
+2021-05-26 20:21:07,439:INFO:Visual Rendered Successfully
+2021-05-26 20:21:07,439:INFO:interpret_model() succesfully completed......................................
+2021-05-26 20:21:07,690:INFO:Initializing get_config()
+2021-05-26 20:21:07,691:INFO:get_config(variable=X_test)
+2021-05-26 20:21:07,709:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:21:07,710:INFO:get_config() succesfully completed......................................
+2021-05-26 20:26:25,056:INFO:Initializing interpret_model()
+2021-05-26 20:26:25,057:INFO:interpret_model(estimator=<catboost.core.CatBoostRegressor object at 0x7fd60aaba290>, use_train_data=False, X_new_sample=None, feature=None, kwargs={}, observation=None, plot=summary, save=False)
+2021-05-26 20:26:25,057:INFO:Checking exceptions
+2021-05-26 20:26:25,057:INFO:plot type: summary
+2021-05-26 20:26:25,057:INFO:Creating TreeExplainer
+2021-05-26 20:26:25,057:INFO:Compiling shap values
+2021-05-26 20:26:26,899:INFO:Visual Rendered Successfully
+2021-05-26 20:26:26,899:INFO:interpret_model() succesfully completed......................................
+2021-05-26 20:26:33,811:INFO:Initializing get_config()
+2021-05-26 20:26:33,812:INFO:get_config(variable=X_test)
+2021-05-26 20:26:33,824:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:26:33,824:INFO:get_config() succesfully completed......................................
+2021-05-26 20:26:48,622:INFO:Initializing get_config()
+2021-05-26 20:26:48,623:INFO:get_config(variable=X_test)
+2021-05-26 20:26:48,644:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:26:48,644:INFO:get_config() succesfully completed......................................
+2021-05-26 20:27:25,334:INFO:Initializing get_config()
+2021-05-26 20:27:25,334:INFO:get_config(variable=X_test)
+2021-05-26 20:27:25,347:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:27:25,347:INFO:get_config() succesfully completed......................................
+2021-05-26 20:28:26,568:INFO:Initializing get_config()
+2021-05-26 20:28:26,568:INFO:get_config(variable=X_test)
+2021-05-26 20:28:26,582:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:28:26,582:INFO:get_config() succesfully completed......................................
+2021-05-26 20:29:18,983:INFO:Initializing get_config()
+2021-05-26 20:29:18,983:INFO:get_config(variable=X_test)
+2021-05-26 20:29:18,999:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:29:18,999:INFO:get_config() succesfully completed......................................
+2021-05-26 20:29:33,011:INFO:Initializing get_config()
+2021-05-26 20:29:33,011:INFO:get_config(variable=X_test)
+2021-05-26 20:29:33,025:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:29:33,025:INFO:get_config() succesfully completed......................................
+2021-05-26 20:32:22,646:INFO:Initializing get_config()
+2021-05-26 20:32:22,650:INFO:get_config(variable=X_test)
+2021-05-26 20:32:22,674:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:32:22,674:INFO:get_config() succesfully completed......................................
+2021-05-26 20:32:35,871:INFO:Initializing get_config()
+2021-05-26 20:32:35,871:INFO:get_config(variable=X_test)
+2021-05-26 20:32:35,904:INFO:Global variable: X_test returned as       total_pop  households  median_age  median_income  income_per_capita  \
+521      2256.0       802.0   30.299999   34932.000000            16669.0   
+5508     3701.0      1311.0   39.799999   81890.000000            40360.0   
+903      1081.0       445.0   38.099998   43750.000000            26024.0   
+4445     6133.0      1610.0   36.099998   67500.000000            24822.0   
+115      5424.0      1730.0   24.700001   30506.000000            11433.0   
+...         ...         ...         ...            ...                ...   
+6279     3658.0      1163.0   43.099998   83036.000000            35049.0   
+38       2797.0       912.0   35.500000   42115.000000            21426.0   
+1223     8993.0      3632.0   50.900002   34150.000000            19885.0   
+6618     2384.0         0.0   42.200001   65444.988281            35560.0   
+3023     4851.0      1752.0   36.599998   93287.000000            41389.0   
+
+      gini_index  housing_units  \
+521      0.39330          991.0   
+5508     0.42390         1320.0   
+903      0.37640          468.0   
+4445     0.47050         1696.0   
+115      0.37310         1927.0   
+...          ...            ...   
+6279     0.43140         1271.0   
+38       0.45200         1158.0   
+1223     0.45280         3911.0   
+6618     0.45445            0.0   
+3023     0.41630         1774.0   
+
+      renter_occupied_housing_units_paying_cash_median_gross_rent  \
+521                                         1018.000000             
+5508                                        1502.000000             
+903                                         1518.000000             
+4445                                        1521.000000             
+115                                          834.000000             
+...                                                 ...             
+6279                                        1338.000000             
+38                                          1093.000000             
+1223                                         996.000000             
+6618                                        1363.808472             
+3023                                        2349.000000             
+
+      owner_occupied_housing_units_lower_value_quartile  \
+521                                         30000.00000   
+5508                                       249700.00000   
+903                                        368569.03125   
+4445                                       356700.00000   
+115                                         84800.00000   
+...                                                 ...   
+6279                                       237800.00000   
+38                                          79400.00000   
+1223                                       424000.00000   
+6618                                       368569.03125   
+3023                                       590000.00000   
+
+      owner_occupied_housing_units_median_value  ...  \
+521                                 46000.00000  ...   
+5508                               305300.00000  ...   
+903                                625000.00000  ...   
+4445                               457400.00000  ...   
+115                                120600.00000  ...   
+...                                         ...  ...   
+6279                               332300.00000  ...   
+38                                 113700.00000  ...   
+1223                               516000.00000  ...   
+6618                               505806.53125  ...   
+3023                               745200.00000  ...   
+
+      income_35000_59999_normalised  income_60000_99999_normalised  \
+521                        0.230673                       0.190773   
+5508                       0.161709                       0.272311   
+903                        0.278652                       0.258427   
+4445                       0.171429                       0.321739   
+115                        0.284393                       0.154335   
+...                             ...                            ...   
+6279                       0.144454                       0.276870   
+38                         0.182018                       0.212719   
+1223                       0.218062                       0.165198   
+6618                       0.184446                       0.195176   
+3023                       0.155251                       0.206050   
+
+      income_100000_199999_normalised  income_200000_or_more_normalised  \
+521                          0.077307                          0.000000   
+5508                         0.295957                          0.096110   
+903                          0.141573                          0.031461   
+4445                         0.191925                          0.063354   
+115                          0.000000                          0.000000   
+...                               ...                               ...   
+6279                         0.272571                          0.112640   
+38                           0.132675                          0.032895   
+1223                         0.101597                          0.005507   
+6618                         0.197366                          0.086412   
+3023                         0.305365                          0.155251   
+
+      million_dollar_housing_units_normalised  \
+521                                  0.000000   
+5508                                 0.000000   
+903                                  0.000000   
+4445                                 0.004717   
+115                                  0.000000   
+...                                       ...   
+6279                                 0.000000   
+38                                   0.000000   
+1223                                 0.000000   
+6618                                 0.023969   
+3023                                 0.070462   
+
+      mortgaged_housing_units_normalised  \
+521                             0.224016   
+5508                            0.467424   
+903                             0.029915   
+4445                            0.374410   
+115                             0.061235   
+...                                  ...   
+6279                            0.457907   
+38                              0.137306   
+1223                            0.013552   
+6618                            0.250698   
+3023                            0.376550   
+
+      owner_occupied_housing_units_normalised  employed_pop_normalised  \
+521                                  0.491423                 0.822142   
+5508                                 0.683333                 0.945429   
+903                                  0.102564                 0.901325   
+4445                                 0.517689                 0.970928   
+115                                  0.176440                 0.905578   
+...                                       ...                      ...   
+6279                                 0.625492                 0.975460   
+38                                   0.480138                 0.943691   
+1223                                 0.022501                 0.945624   
+6618                                 0.385126                 0.917038   
+3023                                 0.547351                 0.930355   
+
+      unemployed_pop_normalised  pop_currently_unmarried_normalised_0.0  
+521                    0.177858                                     1.0  
+5508                   0.054571                                     1.0  
+903                    0.098675                                     1.0  
+4445                   0.029071                                     1.0  
+115                    0.094422                                     1.0  
+...                         ...                                     ...  
+6279                   0.024540                                     1.0  
+38                     0.056309                                     1.0  
+1223                   0.054376                                     1.0  
+6618                   0.080776                                     1.0  
+3023                   0.069645                                     1.0  
+
+[2021 rows x 68 columns]
+2021-05-26 20:32:35,904:INFO:get_config() succesfully completed......................................
