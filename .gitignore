@@ -7,3 +7,6 @@ ACS/mlruns/
 *.log
 */catboost_info/*
 */mlruns/*
+.Rproj.user
+jamaal/boston_redlining_geometry_issues_files/
+*.png
