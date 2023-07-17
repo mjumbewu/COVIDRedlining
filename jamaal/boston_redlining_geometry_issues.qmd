@@ -1,0 +1,187 @@
+---
+title: "Some Geographic Difficulty"
+author: "Jamaal"
+format: 
+  html:
+    embed-resources: true
+editor: visual
+urlcolor: blue
+---
+
+# Collecting the Data
+
+A central challenge thus far has been collecting the data necessary for initial model estimation. Design concerns aside, this is a non-trivial problem for a few reasons: the data we carer about - COVID outcomes- is restricted to particular scales, specifically zip codes; the primary treatment variable we are interested in - redlining designations- are a much finer geographer more easily attached to tracts rather than zips; and the [SVI](https://www.atsdr.cdc.gov/placeandhealth/svi/data_documentation_download.html) is available from CDC at tract or county level.
+
+So, our primary problem here is one of matching data across disparate *scales*. This can be approached multiple ways and the second section will cover some ways. This section will cover the collection. Most has already been collected, but we will bring in Boston redlining, zip codes, and COVID outcomes.
+
+## Redlining
+
+```{r}
+
+if(!require(pacman)){install.packages("pacman"); library(pacman)}
+p_load(tidyverse, tigris, sf, tmap, areal)
+
+#boston redlining
+
+redline <- st_read(here::here("data/boston/boston redlining/boston_redlining.shp"))
+
+redline <- st_transform(redline, crs = 26986)
+
+red_map <- tm_shape(redline) +
+  tm_fill(col = "holc_grade", palette = c("green4", "blue3", "yellow3", "red3")) +
+  tm_borders(col = "gray50")
+
+tmap_leaflet(red_map)
+```
+
+Here we have a basic map of the HOLC graded districts in Boston. We have 39 polygons.
+
+## CDC SVI
+
+The SVI is freely downloadable but *only* at the county or census tract level. Given the documentation it is possible to reproduce this at the zip code level, but it will take time. There are a *lot* of variables and transformations and it is easy to mess up. For this brief report I'll be using the census tract level files and working off of that.
+
+I downloaded the census tract SVI files for the state of Massachusetts. I'll pull in Boston, keep those tracts that intersect with the city.
+
+```{r}
+#|message: false
+
+boston <- places(state = "MA", progress_bar = "FALSE") %>% 
+  filter(NAME == "Boston") %>% 
+  select(GEOID, NAME) %>% 
+  st_transform(crs = 26986)
+
+mass_svi <- st_read(here::here("jamaal/data/cdc_svi/SVI2020_MASSACHUSETTS_tract.shp"))
+
+#reproject just to be careful
+mass_svi <- st_transform(mass_svi, crs = st_crs(boston))
+
+boston_svi <- mass_svi[boston, ]
+boston_svi <- boston_svi %>% 
+  select(FIPS, RPL_THEMES) %>% 
+  mutate(RPL_THEMES = if_else(RPL_THEMES == -999, NA, RPL_THEMES))
+
+svi_map <- tm_shape(boston_svi) +
+  tm_fill(col = "RPL_THEMES", palette = "viridis", style = "pretty", 
+          title = "SVI Ranks") +
+  tm_borders(col = "gray50")
+
+tmap_leaflet(svi_map)
+```
+
+# Chopping It Up
+
+We have our primary datasets. The question now becomes how to reconcile these. There are multiple approaches here. We'll make use of three, in increasing complexity: centroid join; largest polygon join; areal interpolation.
+
+## Centroid Join
+
+The basic idea behind the centroid join is we convert the census tract *polygons* to *points*, then we spatially join our *points* to the redlining category. This is a technique of *convenience*, a pretty cheap hack. Now many researchers use it, but it is generally recognized as not the best thing, but many still do it.
+
+```{r}
+#|fig-cap: "Census Tract Centroids Overlaid on Redlined Areas"
+
+tm_shape(redline) +
+  tm_fill(col = "holc_grade", palette = c("green4", "blue3", "yellow3", "red3"), title = "HOLC Grade") +
+  tm_borders(col = "gray45") +
+tm_shape(st_centroid(boston_svi)) +
+  tm_dots(col = "black")
+```
+
+What should be immediately apparent is that there are many census tracts centroids that *do not* intersect with redlined graded areas. This is a non-trivial validity concern, but it also shows how we can join census tracts in a straightforward fashion.
+
+## Largest Polygon Join
+
+This is another approach. A bit more sophisticated than central join, the largest polygon join census tracts to their redlined district, calculates the *proportion* of the tract that is covered by redlined areas and assigns the district with the largest proportion to our target tracts.
+
+```{r}
+#|fig-cap: "Census Tracts with Largest Proportional HOLC Grade"
+
+large_tracts <- st_join(boston_svi, redline, largest = TRUE)
+
+largest_redline <- tm_shape(large_tracts) +
+  tm_fill(col = "holc_grade", palette = c("green4", "blue3", "yellow3", "red3"), title = "HOLC Grade") +
+  tm_borders(col = "gray45")
+
+tmap_leaflet(largest_redline)
+```
+
+We have less missingness here, but we still have quite a few tracts that do not intersect redlined areas on the periphery of the city, but we notice that even more central, but coastal tracts also do not intersect. This is a better approach in terms of assigning actual values, but it assumes uniformity across tracts.
+
+## Areal Interpolation
+
+The basic idea behind areal interpolation is you assign some proportion of a value to a target polygon based upon the proportion of overlap between them. So, you could imagine say you have a census tract that is split in half by two differently graded HOLC neighborhoods. You would split your values, like total population, evenly across the two neighborhoods. This is a more sophisticated approach, but definitely more complicated. Fortunately, we have some packages that will do this for us both in R and in most desktop GIS like ArcPro or QGIS.
+
+Let's break this a bit down.
+
+### Areal Weights
+
+This map is a bit busy, but shows the proportion of overlap of census tracts to HOLC grade polygons. The main thing to take away here is the majority of tracts have rather significant overlap, but a non-trivial proportion have \<80% overlap so we have some pretty intense levels of intersecting *across* HOLC neighborhoods. Less important, but it is useful to see the underlying process.
+
+We'll make use of [areal package](https://chris-prener.github.io/areal/articles/areal-weighted-interpolation.html) in R to get our intersecting parts and to calculate our area proportions/weights.
+
+```{r}
+
+boston_svi <- boston_svi %>% 
+  mutate(tract_area = st_area(.), 
+         tract_area = units::drop_units(tract_area))
+
+red_overlaps <- aw_intersect(boston_svi, redline,"overlap_area")
+red_overlaps <- red_overlaps %>% 
+  mutate(overlap_prop = (overlap_area/tract_area)*100)
+
+tm_shape(red_overlaps) +
+  tm_fill(col = "overlap_prop", 
+          palette = "viridis", n = 5, 
+          title = "Prop Overlap %") +
+  tm_borders(col = "gray45")
+```
+
+### Areal Weighted Interpolation SVI
+
+Because the SVI is an index value and can't be merely summed up like discrete measures such as population we have to consider how we want to handle this. Following the logic of areal interpolation we do want to take into account the amount of overlap in our polygons. But our estimating strategy here, I think, would work well as a *weighted* average of the SVI with the weights being the proportion of our polygon intersections.
+
+We've already calculated our proportional areas so let's get our weighted averages *by redlined districts*. We'll convert our sf data frame to a non-spatial data frame, group on our districts and then get our average. Finally, we'll join back to our redline polygons and map them out.
+
+```{r}
+
+svi_redline <-red_overlaps %>% 
+  as_tibble() %>% 
+  group_by(holc_id) %>% 
+  summarise(svi_wt = weighted.mean(RPL_THEMES, w = overlap_prop, na.rm = TRUE))
+
+redline <- redline %>% 
+  left_join(svi_redline, by = "holc_id")
+  
+wt_redline <- tm_shape(redline) +
+  tm_fill(col = "svi_wt", palette = "viridis", n = 5, title = "Weighted SVI") +
+  tm_borders(col = "gray45") +
+  tm_text("holc_grade")
+
+tmap_leaflet(wt_redline)
+```
+
+Let's take a look at some additional graphical representation. The box plot here shows the rather mixed results we have when aggregating up to HOLC districts. "C" rated neighborhoods have the highest average SVI values with "D" ranked neighborhoods actually averaging slightly below the average SVI, though with large overlap. But, overall, we see pretty large overlaps in these distributions, but remember we're also dealing with pretty small sample. No one category has more than 18 observations.
+
+```{r}
+#|echo: false
+#|fig-cap: "Weighted SVI by HOLC Grades"
+
+redline <- redline %>% 
+  mutate(holc_grade2 = factor(holc_grade, levels = c("A", "B", "C", "D")))
+
+ggplot(redline, aes(x = holc_grade2, y = svi_wt)) +
+  geom_boxplot() +
+  theme_minimal() +
+  geom_hline(data = redline, 
+             yintercept = .58, 
+             show.legend = FALSE, linetype = 2) +
+  labs(x = "HOLC Grades", y = "Weighted SVI")
+
+```
+
+# Some Closing Thoughts
+
+I ran through this process to demonstrate some of the spatial techniques we will be using regardless of what questions we ultimately decide on because we will probably have some incommensurate scales. That being said, I want to highlight how aggregating up to HOLC neighborhoods can wipe out a lot of variation and potentially removes any correlation that may exist.
+
+I attempted to take a more explicit approach to measuring correlation by using a Spearman's rank test. The value for $\rho$ was small, but exact p-value calculations were not possible due to ties in the SVI measure. So, at this scale, there does not seem to be a strong, if any, correlation between the grade and SVI. But, again, this can largely be blamed on really dramatic aggregating. If we are interested in the spatial distribution of social vulnerability and how that may be linked to COVID outcomes, then aggregating up to HOLC districts is not an ideal strategy.
+
+Historical and theoretical quibbles aside, one could have a more defensible strategy around this if we had *finer* COVID data. This piece, ["COVID-19, Race and Redlining"](https://www.medrxiv.org/content/10.1101/2020.07.11.20148486v1), now published in the *Journal of Urban Economics*, uses individual level COVID fatality data and can do block level estimates. This allows you to keep sufficient observations, be relatively positive your individual cases are associated with only one HOLC grade etc...I think our issue is largely one of data scale appropriateness. Ultimately, this is a geographic mismatch and a validity problem, imo.

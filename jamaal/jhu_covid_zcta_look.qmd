@@ -1,0 +1,59 @@
+---
+title: "Taking a Look at JHU"
+author: "Jamaal"
+format: html
+editor: visual
+urlcolor: blue
+---
+
+# Initial Munging
+
+Scanning through the unified JHU dataset. The basic documentation says we should have ZCTA level data for US. This will be exploring it.
+
+I'm pulling the data from the [Unified COVID Dataset](https://github.com/CSSEGISandData/COVID-19_Unified-Dataset). The link has links to the varied data formats and basic documentation for reference. Firat let's see if we can break out the US zip codes. This is a *large* file with a unique ID structure so it'll take a couple of tricks. From what I can tell, the zip codes are made up of "US"+ZCTA code. So, should be relatively straightforward, but this could also be a trap.
+
+```{r}
+library(pacman)
+p_load(tidyverse, sf, tigris, tmap)
+
+jhu <- read_rds(file = here::here("jamaal/data/hopkins_unified/COVID-19.rds"))
+
+jhu_zcta <- jhu %>% 
+  filter(grepl(pattern = "^(US)", x = ID) & nchar(x = ID) == 7) 
+
+```
+
+`jhu_zcta` is a data frame I am using to try and isolate the zip code data. I run a filter to grab all IDs that start with the "US" characters and then isolate those with 7 characters. This seems sound, but regular expressions are always a high risk-high reward strategy.
+
+After this, an additional complexity is that the dataset is built off of multiple sources. For example, both the New York Times and JHU have estimates that share dates. To prevent double counting we need to make a choice. I'm just going to use JHU, but this can be discussed. After subsetting to JHU estimates we will filter down to 2023-03-09, the last listed date for most zips, it seems. Ideally, this should give us estimates for all reporting zip codes using the cumulative estimates. In addition to filtering the dates I'll also create a new ID column that should make joining the Census geographies a bit easier.
+
+```{r}
+
+jhu_zcta <- jhu_zcta %>% 
+  filter(Source == "JHU", Date == "2023-03-09") %>% 
+  mutate(zcta = str_sub(ID, 3, 7))
+```
+
+# Some Mapping...?
+
+Alright, we've got cumulative case and death counts by ZIP code. This next little section will see about mapping this data and, if it looks correct, then saving out to a spatial file for future reference. It may be useful to compare this to the Boston health department ZCTA numbers. I assume those numbers would be more accurate, but if they line up fairly well, then we may have a valid national-ish dataset.
+
+```{r}
+
+#drop the big file to spare some space
+rm(jhu)
+gc()
+
+us_zcta <- zctas(year = 2022)  %>% 
+  select(ZCTA5CE20)
+
+jhu_wide <- pivot_wider(data = jhu_zcta, id_cols = c(ID, zcta), 
+                        names_from = Type, values_from = Cases)
+
+jhu_wide_sf <- jhu_wide %>% 
+  inner_join(us_zcta, by = c("zcta" = "ZCTA5CE20")) %>% 
+  st_as_sf()
+  
+```
+
+Okay, we have *significant* drops in data. For one, there are 33,791 zip codes in the ZCTA shapefile from the TigerLine shapefiles. There are 3,275 Hopkins zip codes and in trying to join them we lose nearly half ending up with 1,506 matched zip codes to geometry.
