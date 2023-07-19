@@ -37,7 +37,15 @@ redlining <- redlining %>%
 nyc_covid_svi <- nyc_covid_svi %>% 
   st_join(redlining, left = TRUE, largest = TRUE)
 
-st_write(nyc_covid_svi, "jamaal/data/covid_redling_combined_files/nyc_covid_redlining.shp")
+#breaking down to essential columns--------
+
+nyc_covid_svi <- nyc_covid_svi %>% 
+  select(zcta = MODIFIED_ZCTA, covid_cases = COVID_CONFIRMED_CASE_COUNT, covid_deaths = COVID_DEATH_COUNT, RPL_THEMES, holc_grade) 
+
+nyc_covid_svi <- nyc_covid_svi %>% 
+  st_make_valid()
+
+st_write(nyc_covid_svi, "jamaal/data/covid_redling_combined_files/nyc_covid_redlining.shp", append = FALSE)
 
 #nyc map check---------
 nyc_red1 <- tm_shape(nyc_covid_svi) +
@@ -59,7 +67,8 @@ baltimore_covid <- read_excel("jamaal/data/latrice_data/NEW_MD_COVID-19_-_Cases_
 baltimore_covid$ZIP_CODE <- as.character(baltimore_covid$ZIP_CODE)
 
 baltimore_svi_covid <- nyc_svi %>% 
-  inner_join(baltimore_covid, by = c("GEOID" = "ZIP_CODE"))
+  inner_join(baltimore_covid, by = c("GEOID" = "ZIP_CODE")) %>% 
+  st_make_valid()
 
 baltimore_city <- places(state = "MD")
 baltimore_city <- baltimore_city %>% 
@@ -73,4 +82,22 @@ baltimore_svi_covid <- baltimore_svi_covid %>%
 
 baltimore_svi_covid <- st_make_valid(baltimore_svi_covid)
 
-st_write(baltimore_svi_covid, "jamaal/data/covid_redling_combined_files/baltimore_covid_cases_redlining.shp")
+baltimore_svi_covid <- baltimore_svi_covid %>% 
+  select(GEOID, covid_cases = md_total_cases, RPL_THEMES, holc_grade) %>% 
+  mutate(covid_deaths = NA)
+
+baltimore_svi_covid <- baltimore_svi_covid %>% 
+  select(zcta = GEOID, covid_cases, covid_deaths, RPL_THEMES, holc_grade)
+
+st_write(baltimore_svi_covid, "jamaal/data/covid_redling_combined_files/baltimore_covid_cases_redlining.shp", append = FALSE)
+
+#################################################################
+##                    Combine NYC and Bmore                    ##
+#################################################################
+
+nyc_bmore <- rbind(nyc_covid_svi, baltimore_svi_covid)
+
+st_geometry(nyc_bmore) <- "MULTIPOLYGON"
+
+st_write(nyc_bmore, "jamaal/data/covid_redling_combined_files/baltimore_nyc_combined.gpkg", append = FALSE)
+
