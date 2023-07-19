@@ -13,8 +13,8 @@ source("jamaal/svi/svi_func2_state.R")
 
 nyc_covid <- read_csv("jamaal/data/latrice_data/NYC_COVID_Data.csv", col_types = cols("MODIFIED_ZCTA" = col_character()))
 
-# nyc_svi <- build_svi_state(geography = "zcta", census_year = 2020) %>%
-#   st_as_sf()
+nyc_svi <- build_svi_state(geography = "zcta", census_year = 2020) %>%
+  st_as_sf()
 
 ny_State = states(year = 2020) %>%
   filter(NAME == "New York")
@@ -158,7 +158,7 @@ chi_covid_svi_holc <- chi_covid_svi_holc %>%
 nyc_bmore_chi <- rbind(nyc_covid_svi, baltimore_svi_covid, chi_covid_svi_holc)
 
 
-st_geometry(nyc_bmore_chicago) <- "MULTIPOLYGON"
+st_geometry(nyc_bmore_chi) <- "MULTIPOLYGON"
 
 st_write(nyc_bmore_chi, "jamaal/data/covid_redling_combined_files/baltimore_nyc_chicago_combined.gpkg", append = FALSE)
 
