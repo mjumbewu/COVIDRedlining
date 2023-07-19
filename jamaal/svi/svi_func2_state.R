@@ -150,7 +150,8 @@ build_rpl2 <- function(geography, census_year, basic_demo, state = NULL) {
                   "B16005_029", "B16005_030", "B16005_034", "B16005_035",
                   "B16005_039", "B16005_040", "B16005_044", "B16005_045"),
     year = census_year,
-    output = "wide")
+    output = "wide",
+    state = state)
   
   rpl2 <- rpl2 %>%
     select(c("GEOID", starts_with("E_"), starts_with("EP_"))) %>%
