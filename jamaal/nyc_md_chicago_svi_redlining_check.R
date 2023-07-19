@@ -92,12 +92,45 @@ baltimore_svi_covid <- baltimore_svi_covid %>%
 st_write(baltimore_svi_covid, "jamaal/data/covid_redling_combined_files/baltimore_covid_cases_redlining.shp", append = FALSE)
 
 #################################################################
+##                        Chicago COVID                        ##
+#################################################################
+
+chicago <- read_xlsx(path = "jamaal/data/latrice_data/Chicago_COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code-2.xlsx", skip = 1)
+
+chicago <- chicago %>% 
+  mutate(week_start = mdy(`Week Start`), 
+         week_end = mdy(`Week End`))
+
+chi_last_week <- chicago %>% 
+  filter(week_start == '2023-04-30')
+
+#drop unknown zip codes and subset columns
+
+chi_last_week <- chi_last_week %>% 
+  filter(`ZIP Code` != "Unknown")
+
+
+chi_last_week <- chi_last_week %>% 
+  select(zcta = `ZIP Code`, covid_cases = `Cases - Cumulative`, covid_deaths = `Deaths - Cumulative`)
+
+chi_covid_svi <- chi_last_week %>% 
+  left_join(nyc_svi, by = c("zcta" = "GEOID")) %>% 
+  select(zcta, covid_cases, covid_deaths, RPL_THEMES, geometry) %>% 
+  st_as_sf()
+
+chi_covid_svi_holc <- chi_covid_svi %>% 
+  st_join(redlining, left = TRUE, largest = TRUE)
+
+chi_covid_svi_holc <- chi_covid_svi_holc %>% 
+  select(zcta:RPL_THEMES, holc_grade)
+
+#################################################################
 ##                    Combine NYC and Bmore                    ##
 #################################################################
 
-nyc_bmore <- rbind(nyc_covid_svi, baltimore_svi_covid)
+nyc_bmore_chi <- rbind(nyc_covid_svi, baltimore_svi_covid, chi_covid_svi_holc)
 
 st_geometry(nyc_bmore) <- "MULTIPOLYGON"
 
-st_write(nyc_bmore, "jamaal/data/covid_redling_combined_files/baltimore_nyc_combined.gpkg", append = FALSE)
+st_write(nyc_bmore, "jamaal/data/covid_redling_combined_files/baltimore_nyc_chicago_combined.gpkg", append = FALSE)
 
