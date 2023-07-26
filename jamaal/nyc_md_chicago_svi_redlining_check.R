@@ -88,8 +88,8 @@ baltimore_svi_covid <- baltimore_svi_covid %>%
 baltimore_svi_covid <- st_make_valid(baltimore_svi_covid)
 
 
-st_write(baltimore_svi_covid, here::here("jamaal/data/covid_redling_combined_files/full_svi_vars/
-                                         baltimore_covid_redlining_full.shp"), append = FALSE)
+st_write(baltimore_svi_covid, here::here("jamaal/data/covid_redling_combined_files/full_svi_vars/baltimore_covid_redlining_full.shp"), 
+         append = FALSE)
 
 baltimore_svi_covid <- baltimore_svi_covid %>%
   select(GEOID, covid_cases = md_total_cases, RPL_THEMES, holc_grade, E_TOTPOP) %>%
