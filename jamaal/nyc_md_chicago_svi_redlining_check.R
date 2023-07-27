@@ -48,11 +48,12 @@ nyc_covid_svi <- nyc_covid_svi %>%
   st_join(redlining, left = TRUE, largest = TRUE)
 
 nyc_covid_svi <- nyc_covid_svi %>% 
-  filter(!is.na(state)) %>% 
+  filter(!is.na(state), !is.na(geometry)) %>% 
   st_make_valid()
 
 st_write(nyc_covid_svi, here::here("jamaal/data/covid_redling_combined_files/full_svi_vars/nyc_covid_redlining_full_svi.shp"), 
          append = FALSE)
+
 
 #breaking down to essential columns--------
 
