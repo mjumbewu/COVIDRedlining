@@ -44,14 +44,14 @@ nyc_covid_svi <- nyc_covid_svi %>%
 #breaking down to essential columns--------
 
 nyc_covid_svi <- nyc_covid_svi %>%
-  select(zcta = MODIFIED_ZCTA, covid_cases = COVID_CONFIRMED_CASE_COUNT, covid_deaths = COVID_DEATH_COUNT, 
+  select(zcta = MODIFIED_ZCTA, covid_cases = COVID_CONFIRMED_CASE_COUNT, covid_deaths = COVID_DEATH_COUNT,
          RPL_THEMES, holc_grade, E_TOTPOP)
 
 nyc_covid_svi <- nyc_covid_svi %>%
-  st_make_valid() %>% 
+  st_make_valid() %>%
   mutate(city = "NYC")
 
-nyc_covid_svi <- nyc_covid_svi %>% 
+nyc_covid_svi <- nyc_covid_svi %>%
   select(zcta, covid_cases, covid_deaths, RPL_THEMES, holc_grade, E_TOTPOP, city)
 
 st_write(nyc_covid_svi, here::here("jamaal/data/covid_redling_combined_files/nyc_covid_redlining.shp"), append = FALSE)
@@ -60,11 +60,11 @@ st_write(nyc_covid_svi, here::here("jamaal/data/covid_redling_combined_files/nyc
 # nyc_red1 <- tm_shape(nyc_covid_svi) +
 #   tm_fill(col = "holc_grade", n = 4, style = "cat", palette = "viridis") +
 #   tm_borders(col = "gray")
-# 
+#
 # nyc_svi1 <- tm_shape(nyc_covid_svi) +
 #   tm_fill(col = "RPL_THEMES", palette = "viridis") +
 #   tm_borders(col = "gray")
-# 
+#
 # tmap_mode("view")
 # tmap_arrange(nyc_red1, nyc_svi1)
 
@@ -95,10 +95,10 @@ baltimore_svi_covid <- baltimore_svi_covid %>%
   mutate(covid_deaths = NA)
 
 baltimore_svi_covid <- baltimore_svi_covid %>%
-  select(zcta = GEOID, covid_cases, covid_deaths, RPL_THEMES, holc_grade, E_TOTPOP) %>% 
+  select(zcta = GEOID, covid_cases, covid_deaths, RPL_THEMES, holc_grade, E_TOTPOP) %>%
   mutate(city = "Baltimore")
 
-st_write(baltimore_svi_covid, here::here("jamaal/data/covid_redling_combined_files/baltimore_covid_cases_redlining.shp"), 
+st_write(baltimore_svi_covid, here::here("jamaal/data/covid_redling_combined_files/baltimore_covid_cases_redlining.shp"),
          append = FALSE)
 
 # prepping chicago covid---------
@@ -108,46 +108,42 @@ st_write(baltimore_svi_covid, here::here("jamaal/data/covid_redling_combined_fil
 ##                        Chicago COVID                        ##
 #################################################################
 
-chicago <- read_xlsx(path = here::here("jamaal/data/latrice_data/Chicago_COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code-2.xlsx"), 
+chicago <- read_xlsx(path = here::here("jamaal/data/latrice_data/Chicago_COVID-19_Cases__Tests__and_Deaths_by_ZIP_Code-2.xlsx"),
                      skip = 1)
 
-chicago <- chicago %>% 
-  mutate(week_start = mdy(`Week Start`), 
+chicago <- chicago %>%
+  mutate(week_start = mdy(`Week Start`),
          week_end = mdy(`Week End`))
 
-chi_last_week <- chicago %>% 
+chi_last_week <- chicago %>%
   filter(week_start == '2023-04-30')
 
 #drop unknown zip codes and subset columns
 
-chi_last_week <- chi_last_week %>% 
+chi_last_week <- chi_last_week %>%
   filter(`ZIP Code` != "Unknown")
 
 
-chi_last_week <- chi_last_week %>% 
+chi_last_week <- chi_last_week %>%
   select(zcta = `ZIP Code`, covid_cases = `Cases - Cumulative`, covid_deaths = `Deaths - Cumulative`)
 
-chi_covid_svi <- chi_last_week %>% 
-  left_join(nyc_svi, by = c("zcta" = "GEOID")) %>% 
-  select(zcta, covid_cases, covid_deaths, RPL_THEMES, geometry, E_TOTPOP) %>% 
+chi_covid_svi <- chi_last_week %>%
+  left_join(nyc_svi, by = c("zcta" = "GEOID")) %>%
+  select(zcta, covid_cases, covid_deaths, RPL_THEMES, geometry) %>%
   st_as_sf()
 
-chi_covid_svi_holc <- chi_covid_svi %>% 
+chi_covid_svi_holc <- chi_covid_svi %>%
   st_join(redlining, left = TRUE, largest = TRUE)
 
-chi_covid_svi_holc <- chi_covid_svi_holc %>% 
-  select(zcta:RPL_THEMES, holc_grade, E_TOTPOP) %>% 
-  mutate(city = "Chicago")
-
-chi_covid_svi_holc <- chi_covid_svi_holc %>% 
-  select(zcta:RPL_THEMES, holc_grade, E_TOTPOP, city)
+chi_covid_svi_holc <- chi_covid_svi_holc %>%
+  select(zcta:RPL_THEMES, holc_grade)
 
 #################################################################
 ##                    Combine NYC and Bmore                    ##
 #################################################################
 
 nyc_bmore_chi <- rbind(nyc_covid_svi, baltimore_svi_covid, chi_covid_svi_holc)
-nyc_bmore_chi <- nyc_bmore_chi %>% 
+nyc_bmore_chi <- nyc_bmore_chi %>%
   mutate(cases_per_1000 = (covid_cases/E_TOTPOP)*1000,
          deaths_per_1000 = (covid_deaths/E_TOTPOP)*1000)
 
@@ -155,5 +151,4 @@ nyc_bmore_chi <- nyc_bmore_chi %>%
 st_geometry(nyc_bmore_chi) <- "MULTIPOLYGON"
 
 st_write(nyc_bmore_chi, here::here("jamaal/data/covid_redling_combined_files/baltimore_nyc_chicago_combined.gpkg"), append = FALSE)
-
 
