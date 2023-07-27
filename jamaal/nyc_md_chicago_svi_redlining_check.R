@@ -32,8 +32,14 @@ nyc_covid_svi <- nyc_covid %>%
 ##             Brining In Redlining and Joining...             ##
 #################################################################
 
+if (file.exists(here::here("jamaal/data/redlining_u_richmond/fullshpfile/shapefile/holc_ad_data.shp"))) {
+
 redlining <- st_read(here::here("jamaal/data/redlining_u_richmond/fullshpfile/shapefile/holc_ad_data.shp")) %>%
   st_make_valid()
+} else {
+  redlining <- st_read(here::here("jamaal/data/redlining_u_richmond/fullshpfile/fullshpfile/shapefile/holc_ad_data.shp")) %>%
+    st_make_valid()
+}
 
 redlining <- redlining %>%
   st_transform(crs = st_crs(nyc_covid_svi))
