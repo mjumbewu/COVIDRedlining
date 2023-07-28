@@ -32,14 +32,28 @@ nyc_covid_svi <- nyc_covid %>%
 ##             Brining In Redlining and Joining...             ##
 #################################################################
 
+if (file.exists(here::here("jamaal/data/redlining_u_richmond/fullshpfile/shapefile/holc_ad_data.shp"))) {
+
 redlining <- st_read(here::here("jamaal/data/redlining_u_richmond/fullshpfile/shapefile/holc_ad_data.shp")) %>%
   st_make_valid()
+} else {
+  redlining <- st_read(here::here("jamaal/data/redlining_u_richmond/fullshpfile/fullshpfile/shapefile/holc_ad_data.shp")) %>%
+    st_make_valid()
+}
 
 redlining <- redlining %>%
   st_transform(crs = st_crs(nyc_covid_svi))
 
 nyc_covid_svi <- nyc_covid_svi %>%
   st_join(redlining, left = TRUE, largest = TRUE)
+
+nyc_covid_svi <- nyc_covid_svi %>%
+  filter(!is.na(state), !is.na(geometry)) %>%
+  st_make_valid()
+
+st_write(nyc_covid_svi, here::here("jamaal/data/covid_redling_combined_files/full_svi_vars/nyc_covid_redlining_full_svi.shp"),
+         append = FALSE)
+
 
 #breaking down to essential columns--------
 
@@ -56,17 +70,6 @@ nyc_covid_svi <- nyc_covid_svi %>%
 
 st_write(nyc_covid_svi, here::here("jamaal/data/covid_redling_combined_files/nyc_covid_redlining.shp"), append = FALSE)
 
-#nyc map check---------
-# nyc_red1 <- tm_shape(nyc_covid_svi) +
-#   tm_fill(col = "holc_grade", n = 4, style = "cat", palette = "viridis") +
-#   tm_borders(col = "gray")
-#
-# nyc_svi1 <- tm_shape(nyc_covid_svi) +
-#   tm_fill(col = "RPL_THEMES", palette = "viridis") +
-#   tm_borders(col = "gray")
-#
-# tmap_mode("view")
-# tmap_arrange(nyc_red1, nyc_svi1)
 
 # prepping baltimore covid---------
 baltimore_covid <- read_excel(here::here("jamaal/data/latrice_data/NEW_MD_COVID-19_-_Cases_by_ZIP_Code.xlsx"),
@@ -89,6 +92,10 @@ baltimore_svi_covid <- baltimore_svi_covid %>%
   st_join(redlining, left = TRUE, largest = TRUE)
 
 baltimore_svi_covid <- st_make_valid(baltimore_svi_covid)
+
+
+st_write(baltimore_svi_covid, here::here("jamaal/data/covid_redling_combined_files/full_svi_vars/baltimore_covid_redlining_full.shp"),
+         append = FALSE)
 
 baltimore_svi_covid <- baltimore_svi_covid %>%
   select(GEOID, covid_cases = md_total_cases, RPL_THEMES, holc_grade, E_TOTPOP) %>%
@@ -135,8 +142,15 @@ chi_covid_svi <- chi_last_week %>%
 chi_covid_svi_holc <- chi_covid_svi %>%
   st_join(redlining, left = TRUE, largest = TRUE)
 
+st_write(chi_covid_svi_holc, here::here("jamaal/data/covid_redling_combined_files/full_svi_vars/chi_covid_redlining_full.shp"),
+         append = FALSE)
+
 chi_covid_svi_holc <- chi_covid_svi_holc %>%
-  select(zcta:RPL_THEMES, holc_grade)
+  select(zcta:RPL_THEMES, holc_grade, E_TOTPOP) %>%
+  mutate(city = "Chicago")
+
+chi_covid_svi_holc <- chi_covid_svi_holc %>%
+  select(zcta:RPL_THEMES, holc_grade, E_TOTPOP, city)
 
 #################################################################
 ##                    Combine NYC and Bmore                    ##
@@ -145,7 +159,8 @@ chi_covid_svi_holc <- chi_covid_svi_holc %>%
 nyc_bmore_chi <- rbind(nyc_covid_svi, baltimore_svi_covid, chi_covid_svi_holc)
 nyc_bmore_chi <- nyc_bmore_chi %>%
   mutate(cases_per_1000 = (covid_cases/E_TOTPOP)*1000,
-         deaths_per_1000 = (covid_deaths/E_TOTPOP)*1000)
+         deaths_per_1000 = (covid_deaths/E_TOTPOP)*1000) %>%
+  filter(zcta != "60666")
 
 
 st_geometry(nyc_bmore_chi) <- "MULTIPOLYGON"
