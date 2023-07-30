@@ -1,5 +1,5 @@
 if(!require(pacman)){install.packages("pacman"); library(pacman)}
-p_load(tidyverse, sf, randomForest, caret)
+p_load(tidyverse, sf, randomForest, caret, xgboost, tidymodels, vip)
 
 # Using the combined file, run a random forest model to predict the covid_cases
 # based on the SVI scores (RPL_THEMES) and the HOLC grade.
@@ -65,3 +65,95 @@ rf_plot <- plot(rf_pred, test_df$cases_per_1000, main = "Random Forest Predicted
 #
 rf_var_imp <- varImp(rf_fit, conditional = TRUE)
 rf_imp_plot <- plot(rf_var_imp, main = "Random Forest Variable Importance")
+
+
+#################################################################
+##                    XGBOOST On Case Rates                    ##
+#################################################################
+
+#80/20 test split
+xg_split <- initial_split(modeling_df, .8)
+
+xg_train <- training(xg_split)
+xg_test <- testing(xg_split)
+
+xgb_spec <- boost_tree(trees = 1000, 
+                       tree_depth = tune(),
+                      min_n = tune(), 
+                      loss_reduction = tune(), 
+                      sample_size = tune(), 
+                      mtry = tune(), 
+                      learn_rate = tune()) %>% 
+  set_engine("xgboost") %>% 
+  set_mode("regression")
+
+#set hyperparameters grid search
+
+xgb_grid <- grid_latin_hypercube(
+  tree_depth(),
+  min_n(),
+  loss_reduction(),
+  sample_size = sample_prop(),
+  finalize(mtry(), xg_train),
+  learn_rate(),
+  size = 30
+)
+
+xgb_qf <- workflow() %>% 
+  add_formula(cases_per_1000 ~ RPL_THEMES + holc_grade) %>% 
+  add_model(xgb_spec)
+
+#create CV folds for the resampling tuning
+
+xg_folds <- vfold_cv(xg_train, 10)
+
+doParallel::registerDoParallel()
+
+
+xgb_res <- tune_grid(
+  xgb_qf,
+  resamples = xg_folds,
+  grid = xgb_grid,
+  control = control_grid(save_pred = TRUE)
+)
+
+
+# xgb_res %>%
+#   collect_metrics() %>%
+#   filter(.metric == "rmse") %>%
+#   select(mean, mtry:sample_size) %>%
+#   pivot_longer(mtry:sample_size,
+#                values_to = "value",
+#                names_to = "parameter"
+#   ) %>%
+#   ggplot(aes(value, mean, color = parameter)) +
+#   geom_point(alpha = 0.8, show.legend = FALSE) +
+#   facet_wrap(~parameter, scales = "free_x") +
+#   labs(x = NULL, y = "RMSE")
+
+#grab best xgboost for RMSE and Rsquare
+
+best_rmse <- select_best(xgb_res, "rmse")
+best_rsq <- select_best(xgb_res, "rsq")
+
+final_rmse_xgb <- finalize_workflow(xgb_qf, best_rmse)
+
+#pulling VIP values
+
+asdf <- final_rmse_xgb %>% 
+  fit(data = xg_train) %>% 
+  extract_fit_parsnip() %>% 
+  vip() 
+
+asdf + theme_minimal()
+
+
+asdf <- final_rmse_xgb %>% 
+  fit(data = xg_train) %>% 
+  extract_fit_parsnip()
+
+#ginal overall results
+
+final_xgboost_res <- last_fit(final_rmse_xgb, xg_split)
+
+collect_metrics(final_xgboost_res)
