@@ -8,15 +8,15 @@ input_df <- read_sf("jamaal/data/covid_redling_combined_files/baltimore_nyc_chic
 input_df <- input_df %>%
   filter(zcta != "60666") %>%
   filter(!is.na(holc_grade)) %>%
-  filter(!is.na(RPL_THEMES)) %>%
-  filter(city == "NYC")
+  filter(!is.na(RPL_THEMES))
 
 # We'll use the, SVI score, the HOLC grade, and maybe the city as predictors.
 # Create a version of the dataframe that can be used for learning (no
 # geometry).
 modeling_df = data.frame(cases_per_1000 = input_df$cases_per_1000,
                          RPL_THEMES = input_df$RPL_THEMES,
-                         holc_grade = as.factor(input_df$holc_grade))
+                         holc_grade = as.factor(input_df$holc_grade),
+                         is_nyc = as.factor(ifelse(input_df$city == "NYC", 1, 0)))
 
 # Use an 80/20 split for training and testing.
 #
@@ -27,7 +27,7 @@ test_df <- modeling_df[-splitter, ]
 
 # Train the model. This is a regression problem, so we'll use the randomForest package.
 #
-rf_fit <- train(cases_per_1000 ~ .,
+fit <- train(cases_per_1000 ~ .,
                 data = train_df,
                 method = "rf",
                 ntree = 1000,
@@ -35,30 +35,45 @@ rf_fit <- train(cases_per_1000 ~ .,
 
 # Predict the cases_per_1000 for the test set.
 #
-rf_pred <- predict(rf_fit, test_df)
+pred <- predict(fit, test_df)
 
 # Calculate the RMSE.
 #
-rf_rmse <- sqrt(mean((rf_pred - test_df$cases_per_1000)^2))
+rmse <- sqrt(mean((pred - test_df$cases_per_1000)^2))
+rmse
 
 # Calculate the correlation between the predicted and actual values.
 #
-rf_cor <- cor(rf_pred, test_df$cases_per_1000)
+cor <- cor(pred, test_df$cases_per_1000)
+cor
 
 # Calculate the R-squared value.
 #
-rf_rsq <- 1 - sum((rf_pred - test_df$cases_per_1000)^2) / sum((test_df$cases_per_1000 - mean(test_df$cases_per_1000))^2)
+rsq <- 1 - sum((pred - test_df$cases_per_1000)^2) / sum((test_df$cases_per_1000 - mean(test_df$cases_per_1000))^2)
+rsq
 
 # Calculate the MAE and MAPE
 #
-rf_mae <- mean(abs(rf_pred - test_df$cases_per_1000))
-rf_mape <- mean(abs((rf_pred - test_df$cases_per_1000)/test_df$cases_per_1000))
+mae <- mean(abs(pred - test_df$cases_per_1000))
+mae
+mape <- mean(abs((pred - test_df$cases_per_1000)/test_df$cases_per_1000))
+mape
 
 # Plot the predicted vs. actual values for the model.
 #
-rf_plot <- plot(rf_pred, test_df$cases_per_1000, main = "Random Forest Predicted vs. Actual", xlab = "Predicted", ylab = "Actual")
+png(file="jamaal/data/nyc_v_nonnyc_cases_per_1000_rf.png",
+    width = 10, height = 10, res = 600, units = "in")
+pred_v_actual_plot <- plot(pred, test_df$cases_per_1000,
+                           main = "Random Forest Predicted vs. Actual",
+                           xlab = "Predicted",
+                           xlim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
+                           ylim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
+                           ylab = "Actual")
+dev.off()
 
 # Plot the variable importance for the random forest model.
 #
-rf_var_imp <- varImp(rf_fit, conditional = TRUE)
-rf_imp_plot <- plot(rf_var_imp, main = "Random Forest Variable Importance")
+var_imp <- varImp(fit, conditional = TRUE)
+var_imp
+imp_plot <- plot(var_imp, main = "Variable Importance")
+imp_plot
