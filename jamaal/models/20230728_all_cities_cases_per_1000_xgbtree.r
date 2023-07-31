@@ -1,9 +1,5 @@
 if(!require(pacman)){install.packages("pacman"); library(pacman)}
-<<<<<<< HEAD:jamaal/models/20230728_all_cities_cases_per_1000_xgbtree.r
-p_load(tidyverse, sf, xgboost, caret)
-=======
 p_load(tidyverse, sf, randomForest, caret, xgboost, tidymodels, vip)
->>>>>>> a4b39566bccb2d26ae09243ad4f860dd7140814b:jamaal/svi_redlining_cases_model.r
 
 # Using the combined file, run a random forest model to predict the covid_cases
 # based on the SVI scores (RPL_THEMES) and the HOLC grade.
