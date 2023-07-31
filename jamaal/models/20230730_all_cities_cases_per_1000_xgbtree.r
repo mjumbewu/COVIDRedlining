@@ -32,7 +32,7 @@ test_df <- modeling_df[-splitter, ]
 #
 fit <- train(cases_per_1000 ~ .,
                 data = train_df,
-                method = "xgbLinear")
+                method = "xgbTree")
 
 # Predict the cases_per_1000 for the test set.
 #
@@ -62,7 +62,7 @@ mape
 
 # Plot the predicted vs. actual values for the model.
 #
-png(file="jamaal/data/all_cities_cases_per_1000_xgb.png",
+png(file="jamaal/data/all_cities_cases_per_1000_xgbtree.png",
     width = 10, height = 10, res = 600, units = "in")
 pred_v_actual_plot <- plot(pred, test_df$cases_per_1000,
                            main = "XGBoost Predicted vs. Actual",
@@ -72,7 +72,7 @@ pred_v_actual_plot <- plot(pred, test_df$cases_per_1000,
                            ylab = "Actual")
 dev.off()
 
-# Plot the variable importance for the random forest model.
+# Plot the variable importance for the model.
 #
 var_imp <- varImp(fit, conditional = TRUE)
 var_imp
