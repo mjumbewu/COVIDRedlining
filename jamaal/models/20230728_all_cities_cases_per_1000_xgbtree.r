@@ -1,5 +1,5 @@
 if(!require(pacman)){install.packages("pacman"); library(pacman)}
-p_load(tidyverse, sf, randomForest, caret)
+p_load(tidyverse, sf, xgboost, caret)
 
 # Using the combined file, run a random forest model to predict the covid_cases
 # based on the SVI scores (RPL_THEMES) and the HOLC grade.
@@ -30,44 +30,46 @@ test_df <- modeling_df[-splitter, ]
 
 # Train the model. This is a regression problem, so we'll use the randomForest package.
 #
-fit <- train(cases_per_1000 ~ .,
+rf_fit <- train(cases_per_1000 ~ .,
                 data = train_df,
-                method = "rf",
+                method = "xgbTree",
                 ntree = 1000,
                 importance = TRUE)
 
 # Predict the cases_per_1000 for the test set.
 #
-pred <- predict(fit, test_df)
+rf_pred <- predict(rf_fit, test_df)
 
 # Calculate the RMSE.
 #
-rmse <- sqrt(mean((pred - test_df$cases_per_1000)^2))
+rf_rmse <- sqrt(mean((rf_pred - test_df$cases_per_1000)^2))
+rf_rmse
 
 # Calculate the correlation between the predicted and actual values.
 #
-cor <- cor(pred, test_df$cases_per_1000)
+rf_cor <- cor(rf_pred, test_df$cases_per_1000)
+rf_cor
 
 # Calculate the R-squared value.
 #
-rsq <- 1 - sum((pred - test_df$cases_per_1000)^2) / sum((test_df$cases_per_1000 - mean(test_df$cases_per_1000))^2)
+rf_rsq <- 1 - sum((rf_pred - test_df$cases_per_1000)^2) / sum((test_df$cases_per_1000 - mean(test_df$cases_per_1000))^2)
+rf_rsq
 
 # Calculate the MAE and MAPE
 #
-mae <- mean(abs(pred - test_df$cases_per_1000))
-mape <- mean(abs((pred - test_df$cases_per_1000)/test_df$cases_per_1000))
+rf_mae <- mean(abs(rf_pred - test_df$cases_per_1000))
+rf_mae
+rf_mape <- mean(abs((rf_pred - test_df$cases_per_1000)/test_df$cases_per_1000))
+rf_mape
 
 # Plot the predicted vs. actual values for the model.
 #
-dev.new(width = 10, height = 10)
-plot <- plot(pred, test_df$cases_per_1000,
-             main = "Random Forest Predicted vs. Actual",
-             xlab = "Predicted",
-             xlim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
-             ylim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
-             ylab = "Actual")
+rf_plot <- plot(rf_pred, test_df$cases_per_1000, main = "Random Forest Predicted vs. Actual", xlab = "Predicted", ylab = "Actual")
+rf_plot
 
 # Plot the variable importance for the random forest model.
 #
-var_imp <- varImp(fit, conditional = TRUE)
-imp_plot <- plot(var_imp, main = "Random Forest Variable Importance")
+rf_var_imp <- varImp(rf_fit, conditional = TRUE)
+rf_var_imp
+rf_imp_plot <- plot(rf_var_imp, main = "Random Forest Variable Importance")
+rf_imp_plot
