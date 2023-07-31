@@ -59,15 +59,19 @@ mape <- mean(abs((pred - test_df$cases_per_1000)/test_df$cases_per_1000))
 
 # Plot the predicted vs. actual values for the model.
 #
-dev.new(width = 10, height = 10)
+png(file="jamaal/data/all_cities_cases_per_1000_rf.png",
+    width = 10, height = 10, res = 600, units = "in")
 plot <- plot(pred, test_df$cases_per_1000,
              main = "Random Forest Predicted vs. Actual",
              xlab = "Predicted",
              xlim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
              ylim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
              ylab = "Actual")
+dev.off()
 
 # Plot the variable importance for the random forest model.
 #
 var_imp <- varImp(fit, conditional = TRUE)
-imp_plot <- plot(var_imp, main = "Random Forest Variable Importance")
+var_imp
+imp_plot <- plot(var_imp, main = "Variable Importance")
+imp_plot

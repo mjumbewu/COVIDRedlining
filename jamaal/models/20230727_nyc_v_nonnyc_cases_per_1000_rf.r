@@ -52,6 +52,21 @@ cor
 rsq <- 1 - sum((pred - test_df$cases_per_1000)^2) / sum((test_df$cases_per_1000 - mean(test_df$cases_per_1000))^2)
 rsq
 
+# Calculate the R-squared value for NYC and non-NYC observations separately.
+#
+nyc_test_df <- test_df %>%
+  filter(is_nyc == 1)
+nonnyc_test_df <- test_df %>%
+  filter(is_nyc == 0)
+
+nyc_pred <- pred[which(test_df$is_nyc == 1)]
+nonnyc_pred <- pred[which(test_df$is_nyc == 0)]
+
+nyc_rsq <- 1 - sum((nyc_pred - nyc_test_df$cases_per_1000)^2) / sum((nyc_test_df$cases_per_1000 - mean(nyc_test_df$cases_per_1000))^2)
+nyc_rsq
+nonnyc_rsq <- 1 - sum((nonnyc_pred - nonnyc_test_df$cases_per_1000)^2) / sum((nonnyc_test_df$cases_per_1000 - mean(nonnyc_test_df$cases_per_1000))^2)
+nonnyc_rsq
+
 # Calculate the MAE and MAPE
 #
 mae <- mean(abs(pred - test_df$cases_per_1000))
@@ -64,11 +79,12 @@ mape
 png(file="jamaal/data/nyc_v_nonnyc_cases_per_1000_rf.png",
     width = 10, height = 10, res = 600, units = "in")
 pred_v_actual_plot <- plot(pred, test_df$cases_per_1000,
-                           main = "Random Forest Predicted vs. Actual",
+                           main = "Random Forest Predicted vs. Actual, NYC (red) and non-NYC (black)",
                            xlab = "Predicted",
                            xlim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
                            ylim = c(min(pred, test_df$cases_per_1000), max(pred, test_df$cases_per_1000)),
-                           ylab = "Actual")
+                           ylab = "Actual",
+                           col = test_df$is_nyc)
 dev.off()
 
 # Plot the variable importance for the random forest model.
